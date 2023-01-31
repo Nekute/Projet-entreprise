@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    font-family: "Modern Love",sans-serif;
+    font-weight: bold;
+}
+body{
+    background-color: #1a1a1a;
+    /*
+    bed558 vert
+    abb557
+    8b9556
+    909CC2 bleu ou nuage
+    */
+}
