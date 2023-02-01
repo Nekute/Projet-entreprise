@@ -9,14 +9,19 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
     <title>Accueil</title>
 </head>
 <body>
 <header>
+    <input id="burger" type="checkbox">
+    <label for="burger" class="burger" aria-label="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
     <a href="/index.php"><img src="Logo.png" alt="logo"></a>
-
     <nav class="navigation">
-    <div id="mySidenav" class="sidenav">
         <ul class="menu">
             <li><a href="#">Accueil</a></li>
             <li><a href="#" class="button">Produits</a>
@@ -31,15 +36,8 @@
             </li>
             <li><a href="#">Qui sommes-nous ?</a></li>
             <li><a href="#">Contact</a></li>
-        </ul>
-    </div></nav>
+        </ul></nav>
 
-    <label for="burger" class="burger">
-        <input id="burger" type="checkbox">
-        <span></span>
-        <span></span>
-        <span></span>
-    </label>
 </header>
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <footer>

@@ -9,30 +9,10 @@ header{
     font-weight: bold;
     position: fixed;
 }
-.menu, .subMenu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.menu a {
-    display: block;
-    background-color: #CCC;
-    text-decoration: none;
-    padding: 10px;
-    color: #000;
-}
-.subMenu {
-    display: none;
-    max-height: 0;
-}
-.button:target .subMenu {
-    display: block;
-    max-height: 100%;
-}
 
 body{
     height: 100vh;
-    background-color: #1a1a1a;
+    background-color: #ffffff;
     /*
     bed558 vert
     abb557
