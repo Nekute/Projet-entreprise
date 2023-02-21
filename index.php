@@ -20,8 +20,8 @@
         <span></span>
         <span></span>
     </label>
-    <a href="/index.php"><img src="Logo.png" alt="logo"></a>
     <nav class="navigation">
+    <a href="/index.php"><img src="Logo.png" alt="logo"></a>
         <ul class="menu">
             <li><a href="#">Accueil</a></li>
             <li><a href="#" class="button">Produits</a>
