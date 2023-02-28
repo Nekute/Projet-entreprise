@@ -9,61 +9,71 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="cardStyle.css">
+    <link rel="stylesheet" href="animation.scss">
+
     <title>Accueil</title>
 </head>
 <body>
-<header>
-    <input id="burger" type="checkbox">
-    <label for="burger" class="burger" aria-label="menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </label>
-    <nav class="navigation">
-    <a href="/index.php"><img src="Logo.png" alt="logo"></a>
-        <ul class="menu">
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#" class="button">Produits</a>
-                <ul class="subMenu">
-                    <a href="">Tout</a>
-                    <a href="">Jouets</a>
-                    <a href="">Arbres à chat</a>
-                    <a href="">Litières</a>
-                    <a href="">Nourriture</a>
-                    <a href="">Accessoires</a>
-                </ul>
-            </li>
-            <li><a href="#">Qui sommes-nous ?</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul></nav>
+<div class="container">
+    <header>
+        <nav>
+            <svg id="burger" viewBox="0 0 100 100" width="80"
+                 onclick="this.classList.toggle('active'); document.querySelector('.navigation').classList.toggle('click');">
+                <path class="line top"
+                      d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"/>
+                <path class="line middle" d="m 30,50 h 40"/>
+                <path class="line bottom"
+                      d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"/>
+            </svg>
+            <a href="index.php"><img src="image/Logo.png" alt="logo" class="logo"></a>
+            <ul class="liste navigation">
+                <li><a href="#">Accueil</a></li>
+                <li id="onClickMenu"><a href="#" id="produit">Produits</a>
+                    <ul class="subMenu">
+                        <li><a href="">Tout</a></li>
+                        <li><a href="">Jouets</a></li>
+                        <li><a href="">Arbres à chat</a></li>
+                        <li><a href="">Litières</a></li>
+                        <li><a href="">Nourriture</a></li>
+                        <li><a href="">Accessoires</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Qui sommes-nous ?</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="contain">
+        <?php
+        include_once "card.php";
+        ?>
+        <button  onclick="test()"></button>
+    </div>
 
-</header>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<footer>
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" viewBox="0 0 429.543 429.543" xml:space="preserve" width="512" height="512">
-<g>
-    <g>
-        <path style="fill:#77BC1F;" d="M279.436,187.909c-3.556,0-7.049,0.268-10.467,0.766c-12.647-20.774-35.504-34.648-61.604-34.648    c-9.735,0-19.015,1.941-27.486,5.44c-13.123-13.733-31.605-22.302-52.1-22.302c-32.845,0-60.538,21.98-69.224,52.027    C25.215,195.52,0,224.797,0,259.978c0,39.803,32.266,72.069,72.069,72.069h207.366c39.803,0,72.069-32.267,72.069-72.069    C351.505,220.176,319.238,187.909,279.436,187.909z"/>
-        <path style="opacity:0.5;fill:#218649;" d="M127.779,137.165c-32.845,0-60.538,21.98-69.224,52.027    C25.215,195.52,0,224.797,0,259.978c0,39.803,32.266,72.069,72.069,72.069h98.906V151.586    C158.938,142.544,143.995,137.165,127.779,137.165z"/>
-    </g>
-</g>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</svg>
-</footer>
+    <div class="ground">
+        <div class="test">
+            <div class="bush"></div>
+            <div class="bush"></div>
+            <div class="bush"></div>
+            <div class="bush"></div>
+            <div class="bush"></div>
+            <div class="bush"></div>
+            <div class="bush"></div>
+            <div class="bush"></div>
+            <div class="bush"></div>
+            <div class="tree-group">
+                <div class="tree">
+                    <div class="trunk"></div>
+                    <div class="tree-top"></div>
+                    <div class="tree-top"></div>
+                    <div class="tree-top"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>aaaa</footer>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
