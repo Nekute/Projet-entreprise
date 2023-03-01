@@ -49,7 +49,7 @@ footer{
 .contain{
     height: 100vh;
     grid-area: contain;
-    width: 156156156%;
+    width: 100%;
 }
 .ground{
     grid-area: ground;
@@ -327,6 +327,7 @@ button{
     nav {
         background-color: #201c1c;
         padding-top: 10px;
+
     }
 
     a {
@@ -346,7 +347,7 @@ button{
     }
 
     nav {
-        width: 100vw;
+        width: 98vw;
         justify-content: space-between;
         flex-direction: row;
 

@@ -27,7 +27,10 @@ window.onresize = window.onload = function () {
     } else {
         document.getElementById("onClickMenu").addEventListener("click", menu);
     }
-
+    while (left + 80 < width){
+        console.log(left, width);
+        createBush();
+    }
 }
 function menu() {
     document.querySelector('.subMenu').classList.toggle('sousmenu');
