@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="cardStyle.css">
-    <link rel="stylesheet" href="animation.scss">
+    <link rel="stylesheet" href="tree.css">
 
     <title>Accueil</title>
 </head>
@@ -52,22 +52,17 @@
     </div>
 
     <div class="ground">
-        <div class="test">
-            <div class="bush"></div>
-            <div class="bush"></div>
-            <div class="bush"></div>
-            <div class="bush"></div>
-            <div class="bush"></div>
-            <div class="bush"></div>
-            <div class="bush"></div>
-            <div class="bush"></div>
-            <div class="bush"></div>
+        <div class="test" id="test">
             <div class="tree-group">
                 <div class="tree">
                     <div class="trunk"></div>
                     <div class="tree-top"></div>
                     <div class="tree-top"></div>
                     <div class="tree-top"></div>
+                </div>
+                <div class="tree">
+                    <div class="trunk"></div>
+                    <div class="tree-top-circle"></div>
                 </div>
             </div>
         </div>
