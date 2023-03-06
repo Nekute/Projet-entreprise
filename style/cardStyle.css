@@ -1,0 +1,62 @@
+.cardCollection{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+}
+.card {
+    display: grid;
+    width: 270px;
+    grid-template-columns:  1fr 1fr;
+    grid-template-rows: 120px 120px repeat(3,40px);
+    border-radius: 5px;
+    background: #00000007;
+    grid-template-areas:
+            "image image"
+            "image image"
+            "titre titre"
+            "prix prix"
+            "note note";
+}
+
+.image {
+    grid-area: image;
+}
+.image img{
+    object-fit: cover;
+    margin: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    overflow: hidden;
+}
+
+.titre {
+    grid-area: titre;
+    align-self: center;
+
+}
+.titre > h3, .prix > p{
+    margin-left: 30px;
+    font-weight: unset;
+}
+.prix{
+    grid-area: prix;
+}
+.prix > p {
+    font-weight: bold;
+}
+.note{
+    grid-area: note;
+    align-self: center;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 20px;
+}
+.note > p {
+    margin-right: 5px;
+}
+.star {
+    width: 16px;
+    height: 16px;
+}

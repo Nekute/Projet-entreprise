@@ -1,0 +1,554 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Nunito,sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+            "header"
+            "contain"
+            "ground"
+            "footer";
+}
+
+a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    font: 100% "Harmonia Sans Pro Cyr Light";
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    height: 60px;
+    justify-content: center;
+    object-fit: cover;
+}
+
+nav > a {
+    width: unset;
+}
+
+header {
+    z-index: 5;
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    background: #e1eff5;
+}
+
+footer {
+    background: #e1eff5;
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    align-items: center;
+    gap: 20px;
+}
+
+#info, #paiement {
+    font-family: 'Lota grotesque', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+#info > a {
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+#info > h4 {
+    margin-bottom: 5px;
+}
+
+#paiement > h4 {
+    margin-bottom: 5px;
+    transform: translateX(-50px);
+}
+
+
+#iconList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon {
+    width: 26px;
+    height: 26px;
+}
+
+.icon path {
+    fill: #2c2c2c;
+    transition: fill 0.3s ease;
+}
+
+.icon-instagram:hover path {
+    fill: #833AB4;
+}
+
+.icon-twitter:hover path {
+    fill: #1DA1F2;
+}
+
+.icon-pinterest:hover path {
+    fill: #E60023;
+}
+
+.icon-tiktok:hover path {
+    fill: black;
+}
+
+.contain {
+    height: calc(100vh - 150px);
+    grid-area: contain;
+    width: 100%;
+}
+
+.ground {
+    grid-area: ground;
+}
+
+.logo {
+    margin-left: 5px;
+    order: 1;
+    grid-area: logo;
+}
+
+.liste {
+    list-style: none;
+    gap: 25px;
+    order: 3;
+}
+
+nav {
+    background-color: rgba(32, 28, 28, 0);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    z-index: 5;
+    height: 75px;
+}
+
+.liste > li {
+    height: 100%;
+}
+
+.navigation {
+    background-color: #414363;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 100vw;
+    transition: none;
+    z-index: 1;
+}
+
+.subMenu {
+    display: none;
+}
+
+.navigation > li:hover .subMenu {
+    width: 100%;
+    position: relative;
+}
+
+.sousmenu {
+    display: block;
+}
+
+.navigation > li {
+    display: block;
+    background-color: rgb(59, 59, 85);
+    margin: 0 10px;
+    padding: 10px 0;
+}
+
+
+.subMenu {
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+
+#burger {
+    position: fixed;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 400ms;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    order: 2;
+    z-index: 5;
+}
+
+#burger.active {
+    transform: rotate(45deg);
+}
+
+.line {
+    fill: none;
+    transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+    stroke: #000;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+}
+
+#burger .top {
+    stroke-dasharray: 40 160;
+}
+
+#burger .middle {
+    stroke-dasharray: 40 142;
+    transform-origin: 50%;
+    transition: transform 400ms;
+}
+
+#burger .bottom {
+    stroke-dasharray: 40 85;
+    transform-origin: 50%;
+    transition: transform 400ms, stroke-dashoffset 400ms;
+}
+
+#burger.active .top {
+    stroke-dashoffset: -64px;
+}
+
+#burger.active .middle {
+    /* stroke-dashoffset: -20px; */
+    transform: rotate(90deg);
+}
+
+#burger.active .bottom {
+    stroke-dashoffset: -64px;
+}
+
+.navigation.click {
+    transform: translateX(-100vw);
+    transition: all 0.25s ease;
+}
+
+#treeIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    position: absolute;
+    top: 95px;
+    right: 20px;
+}
+
+#treeIcon:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+#treeIcon:active {
+    animation: click 2s;
+}
+
+@keyframes click {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.titreColleciton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.titreColleciton > h2 {
+    font: 30px "Nunito";
+    display: inline-block;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.voirplus > a{
+    text-decoration: underline;
+}
+h1{
+    margin-top: 25px;
+    font: 64px "Modern Love";
+    text-align: center;
+}
+#collection{
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+}
+
+.cta:before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: 0;
+    display: block;
+    border-radius: 50px;
+    background: #7277c2;
+    width: 100%;
+    height: 45px;
+    transition: all 0.3s ease;
+}
+
+.cta:hover:after {
+    background: #767cd9;
+}
+
+.ground::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    bottom: 0;
+    background-color: #f5e7e0;
+}
+
+.ground > svg {
+    position: relative;
+    width: 75px;
+    height: 50px;
+    animation: pop 0.3s linear;
+}
+
+.bush {
+    z-index: 100;
+    width: 80px;
+    height: 40px;
+    bottom: 5px;
+    left: 0;
+    background-color: #f5e7e0;
+    border-radius: 50px 50px 0 0;
+    position: absolute;
+    transform: scale(0);
+}
+
+
+.ground {
+    position: fixed;
+    bottom: 75px;
+}
+
+.test {
+    position: relative;
+    width: 100vw;
+    height: 300px;
+    z-index: -100;
+}
+
+footer {
+    height: 75px;
+}
+
+.tree {
+    width: 8px;
+    height: 80px;
+    position: absolute;
+    z-index: -3;
+    bottom: 0;
+}
+
+.tree .tree-top {
+    background-color: #77BC1F;
+    border-radius: 50px;
+    position: absolute;
+    top: -30px;
+    width: 40px;
+    height: 40px;
+    left: -20px;
+}
+
+.tree .tree-top:after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 5%;
+    right: 5%;
+    background-color: #5f7a3c;
+    border-radius: 100%;
+}
+
+.tree:nth-child(1) {
+    left: 50px;
+}
+
+.tree .tree-top:nth-child(2) {
+    left: -45px;
+    width: 90px;
+}
+
+.tree .tree-top:nth-child(3) {
+    left: 50px;
+}
+
+.tree .tree-top:nth-child(4) {
+    left: 50px;
+}
+
+.trunk {
+    background-color: #9d5d5d;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+@keyframes pop {
+    from {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+button {
+    width: 40px;
+    height: 40px;
+}
+
+@keyframes reversePop {
+    from {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+
+@media screen and (min-width: 850px) {
+    nav > a {
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+
+    .navigation li > a {
+        width: 100%;
+        padding: 8px 15px;
+        display: inline-block;
+    }
+
+    .banner {
+        margin: 25px 0;
+        width: 100vw;
+        height: 400px;
+    }
+
+    #catBanner {
+        object-fit: cover;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+    }
+
+    #burger {
+        display: none;
+    }
+
+    .house {
+        z-index: -1;
+    }
+
+    .logo {
+        margin: unset;
+    }
+
+    nav {
+        justify-content: space-between;
+        flex-direction: row;
+
+    }
+
+    .navigation.click {
+        transform: unset;
+        transition: none;
+    }
+
+    .navigation {
+        background-color: rgba(250, 235, 215, 0);
+        flex-direction: row;
+        position: unset;
+        height: auto;
+        justify-content: end;
+        margin-right: 50px;
+    }
+
+    .navigation > li {
+        background-color: rgba(74, 74, 0, 0);
+        padding: 0;
+        margin: 0;
+    }
+
+    .navigation > li:hover {
+        background: white;
+    }
+
+    .navigation > li > a {
+        height: 75px;
+        padding: 16px 20px;
+    }
+
+    .navigation > li:hover > a {
+        border-bottom: black 1px solid;
+    }
+
+    .navigation > li:hover .subMenu {
+        width: unset;
+        display: block;
+        position: absolute;
+        background: white;
+        box-shadow: 0 10px 20px #00000017;
+    }
+
+    .subMenu {
+        width: unset;
+    }
+
+}

@@ -4,19 +4,23 @@ var bushes = Array.from(
 );
 var temps = 0.1;
 var left = 0;
-function createBush(){
+function createBush() {
     const bush = document.createElement("div");
     bush.classList.add("bush");
     bush.style.animationName = "pop";
     bush.style.animationDuration = "0.5s";
-    bush.style.animationDelay = temps+"s";
+    bush.style.animationDelay = temps + "s";
     bush.style.animationFillMode = "forwards";
-    bush.style.left = left +"px";
+    bush.style.left = left + "px";
     left += 70;
-    temps += 0.05;
     document.querySelector(".test").appendChild(bush);
 }
-
+function removeBush() {
+    var ground = document.querySelector(".test");
+    ground.removeChild(ground.lastChild);
+    left -= 70;
+    temps = 0.1;
+}
 
 
 window.onresize = window.onload = function () {
@@ -27,9 +31,15 @@ window.onresize = window.onload = function () {
     } else {
         document.getElementById("onClickMenu").addEventListener("click", menu);
     }
-    while (left + 80 < width){
-        console.log(left, width);
-        createBush();
+    if (left + 80 > width) {
+        while (left + 80 > width) {
+            removeBush();
+        }
+    } else if (left + 80 < width) {
+        while (left + 80 < width) {
+            createBush();
+            temps += 0.05;
+        }
     }
 }
 function menu() {
@@ -37,10 +47,13 @@ function menu() {
 }
 
 function test() {
+    temps = 0.1;
     bushes = Array.from(
         document.getElementsByClassName('bush')
     );
     bushes.forEach(bush => {
+        temps += 0.05;
+        bush.style.animationDelay = temps + "s";
         if (bush.style.animationName == "reversePop") {
             bush.style.transform = "scale(0)";
             bush.style.animationName = "pop";
@@ -51,10 +64,10 @@ function test() {
 
     });
 }
-function createElementInGround(){
+function createElementInGround() {
 
 }
 
-function createSimpleTree(){
+function createSimpleTree() {
 
 }
