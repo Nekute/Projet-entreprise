@@ -21,7 +21,7 @@
                 </ul>
             </li>
             <li><a href="../biographie.php">Qui sommes-nous ?</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="../contact.php">Contact</a></li>
         </ul>
     </nav>
 </header>

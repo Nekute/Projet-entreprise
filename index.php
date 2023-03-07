@@ -16,7 +16,7 @@ $i = 0;
     <link rel="stylesheet" href="style/tree.css">
     <link rel="stylesheet" href="style/caroussel.css">
     <link rel="icon" href="image/logo2.png"/>
-    <title>Accueil</title>
+    <title>Accueil | Chapristi</title>
 </head>
 <body>
 <div class="container">
@@ -25,21 +25,34 @@ $i = 0;
     ?>
     <div class="contain">
         <div class="slider">
-            <button onclick="buttonNextCaroussel()"></button>
-            <input type="radio" name="carousel" id="t-1"  class="skrt">
+            <button onclick="buttonNextCaroussel()" class="carousselB">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 1024 1024">
+                    <path fill="currentColor"
+                          d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512L340.864 831.872a30.592 30.592 0 0 0 0 42.752a29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"/>
+                </svg>
+            </button>
+            <button onclick="buttonPreviousCaroussel()" class="carousselB">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 1024 1024">
+                    <g transform="translate(1024 0) scale(-1 1)">
+                        <path fill="currentColor"
+                              d="M340.864 149.312a30.592 30.592 0 0 0 0 42.752L652.736 512L340.864 831.872a30.592 30.592 0 0 0 0 42.752a29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"/>
+                    </g>
+                </svg>
+            </button>
+            <input type="radio" name="carousel" id="t-1" class="skrt">
             <input type="radio" name="carousel" id="t-2" class="skrt">
             <input type="radio" name="carousel" id="t-3" checked class="skrt">
             <input type="radio" name="carousel" id="t-4" class="skrt">
             <input type="radio" name="carousel" id="t-5" class="skrt">
             <div class="myCarousel">
                 <label class="item" for="t-1">
-                    <img src="image/arbre-a-chat-design.jpg" alt="picture">
+                    <img src="image/cat-g46ccb5cbe_1920.jpg" alt="picture">
                 </label>
                 <label class="item" for="t-2">
                     <img src="image/arbre-a-chat-en-bois-du-type-cla.jpg" alt="picture">
                 </label>
                 <label class="item" for="t-3">
-                    <img src="image/cat%20banner.png" alt="picture">
+                    <img src="image/cat-g46ccb5cbe_1920.jpg" alt="picture">
                 </label>
                 <label class="item" for="t-4">
                     <img src="image/cat%20banner2.png" alt="picture">
@@ -56,8 +69,24 @@ $i = 0;
                 <label for="t-5"></label>
             </div>
         </div>
-        <h1>Chapristi</h1>
         <img src="image/treeIcon.png" alt="tree icon" onclick="test()" id="treeIcon">
+        <div class="alaune">
+            <h2>A la une</h2>
+            <div class="articleUne">
+                <div class="texteUne">
+                </div>
+                <div class="imageUne">
+                    <img src="image/megaperchcattreetowerwithtext_28.jpg" alt="">
+                </div>
+            </div>
+            <div class="articleUne">
+                <div class="texteUne">
+                </div>
+                <div class="imageUne">
+                    <img src="image/gym01_280x.jpg" alt="">
+                </div>
+            </div>
+        </div>
         <div class="banner">
             <img src="image/cat%20banner2.png" alt="cat-banner" id="catBanner">
         </div>

@@ -1,5 +1,6 @@
 .slider {
     width: 100%;
+    margin-bottom: 50px;
 }
 .slider input {
     display: none;
@@ -12,10 +13,30 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    min-height: 350px;
+    min-height: calc(90vh - 75px);
     perspective: 1000px;
     overflow: hidden;
-
+}
+.carousselB{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    background: none;
+    border: none;
+    cursor: pointer;
+    top: calc(45vh - 75px - 30px);
+}
+.carousselB:nth-of-type(1){
+    right: 20px;
+}
+.carousselB:nth-of-type(2){
+    left: 20px;
+}
+.carousselB > svg path{
+    fill: white;
+    opacity: 0.7;
 }
 .myCarousel .item {
     width: 100vw;
@@ -28,7 +49,6 @@
     transition: opacity 0.5s;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     user-select: none;
-    cursor: pointer;
 }
 .myCarousel .item img {
     width: 100%;

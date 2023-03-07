@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +9,7 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/cardStyle.css">
     <link rel="stylesheet" href="style/tree.css">
-    <title>Biographie | Chapristi</title>
+    <title>Contact | Chapristi</title>
 </head>
 <body>
 <div class="container">
@@ -20,25 +17,17 @@
     include_once "utils/header.php";
     ?>
     <div class="contain">
-        <img src="image/treeIcon.png" alt="tree icon" onclick="test()" id="treeIcon">
-        <div id="histoire">
-            <h1>Slogan</h1>
-        </div>
-        <h2>Notre histoire</h2>
-        <div id="story">
+        <div class="informations">
+            <div class="infoText">
 
-        </div>
-        <div id="team">
-            <div class="membre">
-                <img src="" alt="">
-                <p></p>
             </div>
         </div>
+        <div class="formulaire"></div>
     </div>
     <?php
     include_once 'utils/footer.php';
     ?>
 </div>
-<script src="script.js"></script>
+
 </body>
 </html>
