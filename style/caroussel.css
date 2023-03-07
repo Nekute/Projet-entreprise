@@ -1,0 +1,80 @@
+.slider {
+    width: 100%;
+}
+.slider input {
+
+}
+.myCarousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 350px;
+    perspective: 1000px;
+    overflow: hidden;
+}
+.myCarousel .item {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    user-select: none;
+    cursor: pointer;
+}
+.myCarousel .item img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dots label {
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #d96cc0;
+    margin: 7px;
+    transition-duration: 0.2s;
+}
+#t-1:checked ~ .dots label[for="t-1"],
+#t-2:checked ~ .dots label[for="t-2"],
+#t-3:checked ~ .dots label[for="t-3"],
+#t-4:checked ~ .dots label[for="t-4"],
+#t-5:checked ~ .dots label[for="t-5"] {
+    transform: scale(2);
+    background-color: #fff;
+}
+#t-1:checked ~ #t-3,
+#t-1:checked ~ #t-4{
+    display: none;
+}
+#t-1:checked ~ .dots label[for="t-2"],
+#t-2:checked ~ .dots label[for="t-1"],
+#t-2:checked ~ .dots label[for="t-3"],
+#t-3:checked ~ .dots label[for="t-2"],
+#t-3:checked ~ .dots label[for="t-4"],
+#t-4:checked ~ .dots label[for="t-3"],
+#t-4:checked ~ .dots label[for="t-5"],
+#t-5:checked ~ .dots label[for="t-4"] {
+    transform: scale(1.5);
+}
+
+#t-1:checked ~ .myCarousel label[for="t-1"],
+#t-2:checked ~ .myCarousel label[for="t-2"],
+#t-3:checked ~ .myCarousel label[for="t-3"],
+#t-4:checked ~ .myCarousel label[for="t-4"],
+#t-5:checked ~ .myCarousel label[for="t-4"],
+#t-5:checked ~ .myCarousel label[for="t-5"] {
+    opacity: 1;
+    z-index: 4;
+}

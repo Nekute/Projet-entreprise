@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Nunito,sans-serif;
+    font-family: Nunito, sans-serif;
 }
 
 .container {
@@ -12,6 +12,7 @@
             "contain"
             "ground "
             "footer";
+    grid-template-rows: 75px 1fr 0 75px;
 }
 
 a {
@@ -123,6 +124,7 @@ footer {
 
 .ground {
     grid-area: ground;
+    width: 100%;
 }
 
 .logo {
@@ -256,9 +258,10 @@ nav {
     border-radius: 5px;
     aspect-ratio: 1/1;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     top: 95px;
     right: 20px;
+    z-index: 5;
 }
 
 #treeIcon:hover {
@@ -281,26 +284,31 @@ nav {
         transform: scale(1);
     }
 }
-.titreColleciton{
+
+.titreColleciton {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 .titreColleciton > h2 {
     font: 30px "Nunito";
     display: inline-block;
     font-weight: bold;
     letter-spacing: 2px;
 }
-.voirplus > a{
+
+.voirplus > a {
     text-decoration: underline;
 }
-h1{
+
+h1 {
     margin-top: 25px;
     font: 64px "Modern Love";
     text-align: center;
 }
-#collection{
+
+#collection {
     margin-bottom: 50px;
     max-width: 80vw;
     margin-left: auto;
@@ -371,8 +379,7 @@ h1{
 
 .test {
     position: relative;
-    width: 100vw;
-    height: 300px;
+    width: 100%;
     z-index: -100;
 }
 
@@ -463,6 +470,20 @@ button {
     }
 }
 
+.banner {
+    margin: 25px 0;
+    width: 100%;
+    height: 400px;
+}
+
+#catBanner {
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
 @media screen and (min-width: 850px) {
     nav > a {
         margin-left: 20px;
@@ -473,20 +494,6 @@ button {
         width: 100%;
         padding: 8px 15px;
         display: inline-block;
-    }
-
-    .banner {
-        margin: 25px 0;
-        width: 100vw;
-        height: 400px;
-    }
-
-    #catBanner {
-        object-fit: cover;
-        overflow: hidden;
-        width: 100%;
-        height: 100%;
-        opacity: 0.7;
     }
 
     #burger {

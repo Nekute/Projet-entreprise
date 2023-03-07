@@ -4,6 +4,7 @@ var bushes = Array.from(
 );
 var temps = 0.1;
 var left = 0;
+
 function createBush() {
     const bush = document.createElement("div");
     bush.classList.add("bush");
@@ -64,10 +65,8 @@ function test() {
 
     });
 }
-function createElementInGround() {
-
-}
-
-function createSimpleTree() {
+var next;
+var previous
+function buttonCaroussel() {
 
 }
