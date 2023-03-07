@@ -10,7 +10,7 @@
     grid-template-areas:
             "header"
             "contain"
-            "ground"
+            "ground "
             "footer";
 }
 
@@ -116,7 +116,7 @@ footer {
 }
 
 .contain {
-    height: calc(100vh - 150px);
+    min-height: calc(100vh - 150px);
     grid-area: contain;
     width: 100%;
 }
@@ -301,6 +301,7 @@ h1{
     text-align: center;
 }
 #collection{
+    margin-bottom: 50px;
     max-width: 80vw;
     margin-left: auto;
     margin-right: auto;
@@ -364,8 +365,8 @@ h1{
 
 
 .ground {
-    position: fixed;
-    bottom: 75px;
+    position: sticky;
+    bottom: 0;
 }
 
 .test {
