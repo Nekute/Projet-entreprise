@@ -2,7 +2,10 @@
     width: 100%;
 }
 .slider input {
-
+    display: none;
+}
+.fleche{
+    display: block;
 }
 .myCarousel {
     display: flex;
@@ -12,6 +15,7 @@
     min-height: 350px;
     perspective: 1000px;
     overflow: hidden;
+
 }
 .myCarousel .item {
     width: 100vw;
@@ -46,6 +50,15 @@
     margin: 7px;
     transition-duration: 0.2s;
 }
+.slider{
+    position: relative;
+}
+#t-3{
+    position: relative;
+    top: 50px;
+    left: 50%;
+    z-index: 100;
+}
 #t-1:checked ~ .dots label[for="t-1"],
 #t-2:checked ~ .dots label[for="t-2"],
 #t-3:checked ~ .dots label[for="t-3"],
@@ -54,10 +67,7 @@
     transform: scale(2);
     background-color: #fff;
 }
-#t-1:checked ~ #t-3,
-#t-1:checked ~ #t-4{
-    display: none;
-}
+
 #t-1:checked ~ .dots label[for="t-2"],
 #t-2:checked ~ .dots label[for="t-1"],
 #t-2:checked ~ .dots label[for="t-3"],
@@ -78,3 +88,61 @@
     opacity: 1;
     z-index: 4;
 }
+#t-1:checked ~ .dots label[for="t-1"],
+#t-2:checked ~ .dots label[for="t-2"],
+#t-3:checked ~ .dots label[for="t-3"],
+#t-4:checked ~ .dots label[for="t-4"],
+#t-5:checked ~ .dots label[for="t-5"] {
+    transform: scale(2);
+    background-color: #fff;
+}
+#t-1:checked ~ .dots label[for="t-2"],
+#t-2:checked ~ .dots label[for="t-1"],
+#t-2:checked ~ .dots label[for="t-3"],
+#t-3:checked ~ .dots label[for="t-2"],
+#t-3:checked ~ .dots label[for="t-4"],
+#t-4:checked ~ .dots label[for="t-3"],
+#t-4:checked ~ .dots label[for="t-5"],
+#t-5:checked ~ .dots label[for="t-4"] {
+    transform: scale(1.5);
+}
+#t-1:checked ~ .myCarousel label[for="t-3"],
+#t-2:checked ~ .myCarousel label[for="t-4"],
+#t-3:checked ~ .myCarousel label[for="t-5"],
+#t-4:checked ~ .myCarousel label[for="t-1"],
+#t-5:checked ~ .myCarousel label[for="t-2"] {
+
+    z-index: 2;
+}
+#t-1:checked ~ .myCarousel label[for="t-2"],
+#t-2:checked ~ .myCarousel label[for="t-3"],
+#t-3:checked ~ .myCarousel label[for="t-4"],
+#t-4:checked ~ .myCarousel label[for="t-5"],
+#t-5:checked ~ .myCarousel label[for="t-1"] {
+
+    z-index: 3;
+}
+#t-2:checked ~ .myCarousel label[for="t-1"],
+#t-3:checked ~ .myCarousel label[for="t-2"],
+#t-4:checked ~ .myCarousel label[for="t-3"],
+#t-5:checked ~ .myCarousel label[for="t-4"],
+#t-1:checked ~ .myCarousel label[for="t-5"] {
+
+    z-index: 3;
+}
+#t-3:checked ~ .myCarousel label[for="t-1"],
+#t-4:checked ~ .myCarousel label[for="t-2"],
+#t-5:checked ~ .myCarousel label[for="t-3"],
+#t-2:checked ~ .myCarousel label[for="t-5"],
+#t-1:checked ~ .myCarousel label[for="t-4"] {
+
+}
+#t-1:checked ~ .myCarousel label[for="t-1"],
+#t-2:checked ~ .myCarousel label[for="t-2"],
+#t-3:checked ~ .myCarousel label[for="t-3"],
+#t-4:checked ~ .myCarousel label[for="t-4"],
+#t-5:checked ~ .myCarousel label[for="t-4"],
+#t-5:checked ~ .myCarousel label[for="t-5"] {
+    z-index: 4;
+}
+

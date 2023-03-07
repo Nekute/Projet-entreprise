@@ -65,8 +65,34 @@ function test() {
 
     });
 }
-var next;
-var previous
-function buttonCaroussel() {
-
+var photos = document.getElementsByClassName('skrt');
+function buttonNextCaroussel() {
+    photos = document.getElementsByClassName('skrt');
+    for (let i =0 ; i<photos.length ; i++){
+        if (photos[i].checked){
+            photos[i].checked = false
+            if (i==4){
+                photos[0].checked = true
+                break;
+            } else {
+                photos[i+1].checked = true
+                break;
+            }
+        }
+    }
+}
+function buttonPreviousCaroussel() {
+    photos = document.getElementsByClassName('skrt');
+    for (let i =0 ; i<photos.length ; i++){
+        if (photos[i].checked){
+            photos[i].checked = false
+            if (i==0){
+                photos[4].checked = true
+                break;
+            } else {
+                photos[i-1].checked = true
+                break;
+            }
+        }
+    }
 }

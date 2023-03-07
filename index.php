@@ -25,11 +25,12 @@ $i = 0;
     ?>
     <div class="contain">
         <div class="slider">
-            <input type="radio" name="carousel" id="t-1">
-            <input type="radio" name="carousel" id="t-2">
-            <input type="radio" name="carousel" id="t-3" checked>
-            <input type="radio" name="carousel" id="t-4">
-            <input type="radio" name="carousel" id="t-5">
+            <button onclick="buttonNextCaroussel()"></button>
+            <input type="radio" name="carousel" id="t-1"  class="skrt">
+            <input type="radio" name="carousel" id="t-2" class="skrt">
+            <input type="radio" name="carousel" id="t-3" checked class="skrt">
+            <input type="radio" name="carousel" id="t-4" class="skrt">
+            <input type="radio" name="carousel" id="t-5" class="skrt">
             <div class="myCarousel">
                 <label class="item" for="t-1">
                     <img src="image/arbre-a-chat-design.jpg" alt="picture">
