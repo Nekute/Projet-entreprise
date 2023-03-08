@@ -1,8 +1,8 @@
 <footer>
     <div id="info">
         <h4>Informations</h4>
-        <a href="">A propos</a>
-        <a href="">Contactez nous !</a>
+        <a href="../biographie.php">A propos</a>
+        <a href="../contact.php">Contactez nous !</a>
     </div>
     <div id="iconList">
         <a href="">

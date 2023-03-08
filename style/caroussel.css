@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    min-height: calc(90vh - 75px);
+    min-height: calc(92vh - 75px);
     perspective: 1000px;
     overflow: hidden;
 }
@@ -21,12 +21,11 @@
     width: 60px;
     height: 60px;
     position: absolute;
-    top: 0;
     z-index: 5;
     background: none;
     border: none;
     cursor: pointer;
-    top: calc(45vh - 75px - 30px);
+    top: calc(46vh - 75px - 30px);
 }
 .carousselB:nth-of-type(1){
     right: 20px;
@@ -66,7 +65,7 @@
     width: 5px;
     border-radius: 50%;
     cursor: pointer;
-    background-color: #d96cc0;
+    background-color: #6b52ae;
     margin: 7px;
     transition-duration: 0.2s;
 }
@@ -78,6 +77,15 @@
     top: 50px;
     left: 50%;
     z-index: 100;
+}
+.item:nth-of-type(3) > p {
+    position: absolute;
+    top: 80px;
+    left: 10%;
+    z-index: 50;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font: 60px "Nunito ExtraBold";
 }
 #t-1:checked ~ .dots label[for="t-1"],
 #t-2:checked ~ .dots label[for="t-2"],

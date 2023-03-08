@@ -1,0 +1,237 @@
+.group {
+    position: relative;
+}
+
+.input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+}
+
+.input:focus, textarea:focus {
+    outline: none;
+}
+
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.input:focus ~ label, .input:valid ~ label, textarea:focus ~ label{
+    top: -20px;
+    font-size: 14px;
+    color: #6b52ae;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.bar:before, .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #6b52ae;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+.input:focus ~ .bar:before, .input:focus ~ .bar:after, textarea:focus ~ .bar:before, textarea:focus ~ .bar:after{
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.input:focus ~ .highlight, textarea:focus ~ .highlight{
+    animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+    from {
+        background:#6b52ae;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+.formulaire{
+    width: 100%;
+    max-width: 1000px;
+}
+.formulaire > h2 {
+    display: block;
+    font-size: 40px;
+    letter-spacing: 3px;
+    text-align: end;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 20px;
+}
+.formulaire > form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "nom telephone"
+    "email email"
+    "objet objet"
+    "message message"
+    "submit submit"
+    ;
+    gap: 25px;
+}
+
+#nom{
+    grid-area: nom;
+}
+#telephone{
+    grid-area: telephone;
+}
+#email{
+    grid-area: email;
+}
+#objet{
+    grid-area: objet;
+}
+#submit{
+     grid-area: submit;
+    justify-self: end;
+ }
+#message{
+    grid-area: message;
+    resize: vertical;
+}
+textarea{
+    min-height: 200px;
+    border: none;
+    border-bottom: 1px solid #515151;
+}
+
+input[type = submit]{
+    width: 150px
+}
+.primary-button {
+    font-family: 'Ropa Sans', sans-serif;
+    /* font-family: 'Valorant', sans-serif; */
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    border: 1px solid #0E1822;
+    padding: 0.8rem 2.1rem;
+    background-image: url("../image/button.svg");
+    background-color: #0E1822;
+    background-size: 200%;
+    background-position: 200%;
+    background-repeat: no-repeat;
+    transition: 0.3s ease-in-out;
+    transition-property: background-position, border, color;
+    position: relative;
+    z-index: 1;
+}
+
+.primary-button:hover {
+    border: 1px solid #f5ded6;
+    color: white;
+    background-position: 40%;
+}
+
+.primary-button:before {
+    content: "";
+    position: absolute;
+    background-color: #0E1822;
+    width: 0.2rem;
+    height: 0.2rem;
+    top: -1px;
+    left: -1px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.primary-button:hover:before {
+    background-color: white;
+}
+
+.primary-button:hover:after {
+    background-color: white;
+}
+
+.primary-button:after {
+    content: "";
+    position: absolute;
+    background-color: #f5ded6;
+    width: 0.3rem;
+    height: 0.3rem;
+    bottom: -1px;
+    right: -1px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.button-borders {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+}
+
+.button-borders:before {
+    content: "";
+    position: absolute;
+    width: calc(100% + 0.5em);
+    height: 50%;
+    left: -0.3em;
+    top: -0.3em;
+    border: 1px solid #0E1822;
+    border-bottom: 0px;
+    /* opacity: 0.3; */
+}
+
+.button-borders:after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 0.5em);
+    height: 50%;
+    left: -0.3em;
+    bottom: -0.3em;
+    border: 1px solid #0E1822;
+    border-top: 0px;
+    /* opacity: 0.3; */
+    z-index: 0;
+}
+
+.shape {
+    fill: #0E1822;
+}

@@ -16,6 +16,7 @@ $i = 0;
     <link rel="stylesheet" href="style/tree.css">
     <link rel="stylesheet" href="style/caroussel.css">
     <link rel="icon" href="image/logo2.png"/>
+
     <title>Accueil | Chapristi</title>
 </head>
 <body>
@@ -46,19 +47,20 @@ $i = 0;
             <input type="radio" name="carousel" id="t-5" class="skrt">
             <div class="myCarousel">
                 <label class="item" for="t-1">
-                    <img src="image/cat-g46ccb5cbe_1920.jpg" alt="picture">
+                    <img src="image/Nekute_cat_sleeping_with_pastel_pink_background_7b81b5f7-149c-489a-8adc-baac81568956.png" alt="picture">
                 </label>
                 <label class="item" for="t-2">
-                    <img src="image/arbre-a-chat-en-bois-du-type-cla.jpg" alt="picture">
+                    <img src="image/Arthur_Ly_cat_with_blue_pastel_background_1ffb4aa0-1fd7-478a-8017-d4877491c63f.png" alt="picture">
                 </label>
                 <label class="item" for="t-3">
+
                     <img src="image/cat-g46ccb5cbe_1920.jpg" alt="picture">
                 </label>
                 <label class="item" for="t-4">
-                    <img src="image/cat%20banner2.png" alt="picture">
+                    <img src="image/Arthur_Ly_cat_sleeping_with_blue_pastel_background_e08744aa-88bd-4fdd-97ab-8b1e7327a819.png" alt="picture">
                 </label>
                 <label class="item" for="t-5">
-                    <img src="image/gym01_280x.jpg" alt="picture">
+                    <img src="image/Arthur_Ly_cat_sleeping_with_pink_pastel_background_49ace69e-0f67-4789-8953-f98355467eb1.png" alt="picture">
                 </label>
             </div>
             <div class="dots">
@@ -74,17 +76,47 @@ $i = 0;
             <h2>A la une</h2>
             <div class="articleUne">
                 <div class="texteUne">
+                    <h2>Arbre à chat</h2>
+                    <h3>Prix</h3>
+                    <p>225.00 €</p>
+                    <div class="fabrication">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-tree" viewBox="0 0 16 16">
+                            <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z"/>
+                        </svg>
+                        <p>Fait main, en France</p>
+                    </div>
+                    <a href="">Ajouter au panier</a>
+                    <div class="description">
+                        <p>Desciption</p>
+                        <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path>
+                        </svg>
+                    </div>
                 </div>
-                <div class="imageUne">
-                    <img src="image/megaperchcattreetowerwithtext_28.jpg" alt="">
-                </div>
+                <img src="image/megaperchcattreetowerwithtext_28.jpg" alt="" class="imageUne">
             </div>
             <div class="articleUne">
                 <div class="texteUne">
+                    <h2>Arbre à chat</h2>
+                    <h3>Prix</h3>
+                    <p>225.00 €</p>
+                    <div class="fabrication">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                             class="bi bi-tree" viewBox="0 0 16 16">
+                            <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z"/>
+                        </svg>
+                        <p>Fait main, en France</p>
+                    </div>
+                    <a href="">Ajouter au panier</a>
+                    <div class="description">
+                        <p>Desciption</p>
+                        <svg class="svg-icon" viewBox="0 0 20 20">
+                            <path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path>
+                        </svg>
+                    </div>
                 </div>
-                <div class="imageUne">
-                    <img src="image/gym01_280x.jpg" alt="">
-                </div>
+                <img src="image/arbre-a-chat-en-bois-du-type-cla.jpg" alt="" class="imageUne">
             </div>
         </div>
         <div class="banner">

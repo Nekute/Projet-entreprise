@@ -66,12 +66,15 @@ function test() {
     });
 }
 var photos = document.getElementsByClassName('skrt');
+var timeCaroussel;
 function buttonNextCaroussel() {
     photos = document.getElementsByClassName('skrt');
     for (let i =0 ; i<photos.length ; i++){
+        clearTimeout(timeCaroussel);
+        timeCaroussel = setTimeout(() => buttonNextCaroussel(), 10000);
         if (photos[i].checked){
             photos[i].checked = false
-            if (i==4){
+            if (i===4){
                 photos[0].checked = true
                 break;
             } else {
@@ -84,9 +87,11 @@ function buttonNextCaroussel() {
 function buttonPreviousCaroussel() {
     photos = document.getElementsByClassName('skrt');
     for (let i =0 ; i<photos.length ; i++){
+        clearTimeout(timeCaroussel);
+        timeCaroussel = setTimeout(() => buttonNextCaroussel(), 10000);
         if (photos[i].checked){
             photos[i].checked = false
-            if (i==0){
+            if (i===0){
                 photos[4].checked = true
                 break;
             } else {
@@ -96,3 +101,5 @@ function buttonPreviousCaroussel() {
         }
     }
 }
+clearTimeout(timeCaroussel);
+timeCaroussel = setTimeout(() => buttonNextCaroussel(), 10000);

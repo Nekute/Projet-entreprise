@@ -1,5 +1,5 @@
 <?php
-function card($titre, $prix/*$note*/,$img): void
+function card($titre, $prix/*$note*/, $img): void
 {
     echo "<div class=\"card\">
     <div class=\"image\">
@@ -20,4 +20,14 @@ function card($titre, $prix/*$note*/,$img): void
    <p>0</p>
     </div>
 </div>";
+}
+
+function input($class): void
+{
+    $oui = explode(" ",$class);
+    echo "<div class=\"group\" id=\"".strtolower($oui[0])."\">
+                        <input required=\"\" type=\"text\" class=\"input\" name=\"".strtolower($oui[0])."\">
+                        <span class=\"bar\"></span>
+                        <label for=\"".strtolower($oui[0])."\">$class</label>
+                    </div>";
 }

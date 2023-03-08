@@ -1,3 +1,7 @@
+<?php
+include_once "utils/card.php";
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,6 +13,7 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/cardStyle.css">
     <link rel="stylesheet" href="style/tree.css">
+    <link rel="stylesheet" href="style/formulaire.css">
     <title>Contact | Chapristi</title>
 </head>
 <body>
@@ -17,12 +22,39 @@
     include_once "utils/header.php";
     ?>
     <div class="contain">
-        <div class="informations">
-            <div class="infoText">
-
+        <div class="contact">
+            <div class="informations">
+                <div class="infoText">
+                    <p>
+                        <strong>Courcouronnes</strong><br>
+                        7 rue du giga chad <br>
+                        91080 Essonne <br>
+                        +33 6 66 13 04 69
+                    </p>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21098.730001804335!2d2.3945547759347656!3d48.62245157294996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5de728acdadfd%3A0x40b82c3688b47b0!2sCourcouronnes%2C%2091080%20%C3%89vry-Courcouronnes!5e0!3m2!1sfr!2sfr!4v1678216912041!5m2!1sfr!2sfr"
+                          style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="formulaire">
+                <h2>Contactez nous !</h2>
+                <form method="post">
+                    <?php
+                    input("Nom *");
+                    input("Telephone");
+                    input("Email *");
+                    input("Objet *");
+                    ?>
+                    <div class="group" id="message">
+                        <textarea class="input"  id="message" name="message"></textarea>
+                        <span class="bar"></span>
+                    </div>
+                    <div class="button-borders" id="submit">
+                        <input class="primary-button" type="submit" value="Envoyer">
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="formulaire"></div>
     </div>
     <?php
     include_once 'utils/footer.php';
