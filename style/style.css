@@ -203,13 +203,17 @@ nav {
 .compte  a >svg > path {
     fill: black;
 }
-
+.groupNav > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .subMenu {
     float: none;
     width: 100%;
     text-align: left;
 }
-.group {
+.groups {
     display: flex;
     line-height: 28px;
     align-items: center;
@@ -217,7 +221,7 @@ nav {
     max-width: 190px;
 }
 
-.input {
+.inputs {
     width: 100%;
     height: 40px;
     line-height: 28px;
@@ -231,11 +235,11 @@ nav {
     transition: .3s ease;
 }
 
-.input::placeholder {
+.inputs::placeholder {
     color: #9e9ea7;
 }
 
-.input:focus, input:hover {
+.inputs:focus, .inputs:hover {
     outline: none;
     border-color: rgba(225, 239, 245, 0.4);
     background-color: #fff;
