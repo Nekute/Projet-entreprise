@@ -20,11 +20,8 @@
     include_once "utils/header.php";
     ?>
     <div class="contain">
-        <img src="image/treeIcon.png" alt="tree icon" onclick="test()" id="treeIcon">
         <div id="histoire">
-            <h1>Slogan</h1>
         </div>
-        <h2>Notre histoire</h2>
         <div id="story">
 
         </div>

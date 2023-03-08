@@ -94,7 +94,7 @@ $i = 0;
             <div class="titreColleciton">
                 <h2>Notre collection</h2>
                 <div class="voirplus">
-                    <a href="">Voir plus</a>
+                    <a href="produits.php">Voir plus</a>
                 </div>
             </div>
             <div class="cardCollection">
