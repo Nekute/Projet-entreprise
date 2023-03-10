@@ -637,10 +637,8 @@ footer {
 }
 
 .contact {
-    margin-top: 100px;
     width: 85%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 100px auto;
     display: flex;
     justify-content: space-evenly;
     gap: 50px;

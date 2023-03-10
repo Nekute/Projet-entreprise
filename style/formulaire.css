@@ -45,7 +45,7 @@ label {
     content: '';
     height: 2px;
     width: 0;
-    bottom: 1px;
+    bottom: 0px;
     position: absolute;
     background: #6b52ae;
     transition: 0.2s ease all;

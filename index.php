@@ -47,7 +47,7 @@ $i = 0;
             <input type="radio" name="carousel" id="t-5" class="skrt">
             <div class="myCarousel">
                 <label class="item" for="t-1">
-                    <img src="image/Nekute_cat_sleeping_with_pastel_pink_background_7b81b5f7-149c-489a-8adc-baac81568956.png" alt="picture">
+                    <img src="image/Arthur_Ly_cat_sleep_with_pink_pastel_background_dbbfc898-7f9b-4f72-aad4-5f7540529f46.png" alt="picture">
                 </label>
                 <label class="item" for="t-2">
                     <img src="image/Arthur_Ly_cat_with_blue_pastel_background_1ffb4aa0-1fd7-478a-8017-d4877491c63f.png" alt="picture">
@@ -60,7 +60,7 @@ $i = 0;
                     <img src="image/Arthur_Ly_cat_sleeping_with_blue_pastel_background_e08744aa-88bd-4fdd-97ab-8b1e7327a819.png" alt="picture">
                 </label>
                 <label class="item" for="t-5">
-                    <img src="image/Arthur_Ly_cat_sleeping_with_pink_pastel_background_49ace69e-0f67-4789-8953-f98355467eb1.png" alt="picture">
+                    <img src="image/Arthur_Ly_cat_sleep_with_pink_pastel_background_fbc7e7b8-a3e1-4763-bf86-ff8485a9b37d.png" alt="picture">
                 </label>
             </div>
             <div class="dots">
