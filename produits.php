@@ -1,5 +1,6 @@
 <?php
-include_once "utils/card.php";
+require_once "utils/card.php";
+require_once "modele/produitDB.php"
 ?>
 <!doctype html>
 <html lang="en">
@@ -30,7 +31,7 @@ include_once "utils/card.php";
             <h2>Notre collection</h2>
         </div>
         <div class="affichageCollection">
-            <p>5 produits</p>
+            <p><?= count(getAllProduits())?> produits</p>
             <div class="filtre">
                 <div class="filtre">
                     <form action="" method="post" enctype="multipart/form-data" class="research">
@@ -45,11 +46,9 @@ include_once "utils/card.php";
         </div>
         <div class="collection">
             <?php
-            card("Jungle Gym Cat Tree 2.0", "250.00", "image/gym01_280x.jpg");
-            card("Mega Perch Cat Tree", "225.00", "image/megaperchcattreetowerwithtext_28.jpg");
-            card("Fruit Tart Cat Bed", "30.00", "image/FruitTartBednewcolor2_280x.jpg");
-            card("Milton's Cat Butt Beanie", "19.99", "image/miltcatbuttbeanieblackcolorspeck.jpg");
-            card("Luxe Cloud Cat Bed", "32.00", "image/cloudcatbedwhitebackground_360x.jpg");
+            foreach (getAllProduits() as $value) {
+                echo card($value["id_produit"]);
+            }
             ?>
         </div>
     </div>

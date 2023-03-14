@@ -1,5 +1,6 @@
 <?php
 require_once "utils/card.php";
+require_once "modele/produitDB.php";
 $photo[] = "arbre-a-chat-design.jpg";
 $photo[] = "arbre-a-chat-en-bois-du-type-cla.jpg";
 $i = 0;
@@ -74,50 +75,8 @@ $i = 0;
         <img src="image/treeIcon.png" alt="tree icon" onclick="test()" id="treeIcon">
         <div class="alaune">
             <h2>A la une</h2>
-            <div class="articleUne">
-                <div class="texteUne">
-                    <h2>Arbre à chat</h2>
-                    <h3>Prix</h3>
-                    <p>225.00 €</p>
-                    <div class="fabrication">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                             class="bi bi-tree" viewBox="0 0 16 16">
-                            <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z"/>
-                        </svg>
-                        <p>Fait main, en France</p>
-                    </div>
-                    <a href="">Ajouter au panier</a>
-                    <div class="description">
-                        <p>Desciption</p>
-                        <svg class="svg-icon" viewBox="0 0 20 20">
-                            <path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path>
-                        </svg>
-                    </div>
-                </div>
-                <img src="image/megaperchcattreetowerwithtext_28.jpg" alt="" class="imageUne">
-            </div>
-            <div class="articleUne">
-                <div class="texteUne">
-                    <h2>Arbre à chat</h2>
-                    <h3>Prix</h3>
-                    <p>225.00 €</p>
-                    <div class="fabrication">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                             class="bi bi-tree" viewBox="0 0 16 16">
-                            <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z"/>
-                        </svg>
-                        <p>Fait main, en France</p>
-                    </div>
-                    <a href="">Ajouter au panier</a>
-                    <div class="description">
-                        <p>Desciption</p>
-                        <svg class="svg-icon" viewBox="0 0 20 20">
-                            <path fill="none" d="M11.611,10.049l-4.76-4.873c-0.303-0.31-0.297-0.804,0.012-1.105c0.309-0.304,0.803-0.293,1.105,0.012l5.306,5.433c0.304,0.31,0.296,0.805-0.012,1.105L7.83,15.928c-0.152,0.148-0.35,0.223-0.547,0.223c-0.203,0-0.406-0.08-0.559-0.236c-0.303-0.309-0.295-0.803,0.012-1.104L11.611,10.049z"></path>
-                        </svg>
-                    </div>
-                </div>
-                <img src="image/arbre-a-chat-en-bois-du-type-cla.jpg" alt="" class="imageUne">
-            </div>
+            <?= article(2)?>
+            <?= article(1)?>
         </div>
         <div class="banner">
             <img src="image/cat%20banner2.png" alt="cat-banner" id="catBanner">
@@ -131,11 +90,9 @@ $i = 0;
             </div>
             <div class="cardCollection">
                 <?php
-                card("Jungle Gym Cat Tree 2.0", "250.00", "image/gym01_280x.jpg");
-                card("Mega Perch Cat Tree", "225.00", "image/megaperchcattreetowerwithtext_28.jpg");
-                card("Fruit Tart Cat Bed", "30.00", "image/FruitTartBednewcolor2_280x.jpg");
-                card("Milton's Cat Butt Beanie", "19.99", "image/miltcatbuttbeanieblackcolorspeck.jpg");
-                card("Luxe Cloud Cat Bed", "32.00", "image/cloudcatbedwhitebackground_360x.jpg");
+                foreach (getAllProduits() as $value) {
+                    echo card($value["id_produit"]);
+                }
                 ?>
             </div>
         </div>

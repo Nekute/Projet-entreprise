@@ -1,0 +1,11 @@
+.containbio{
+    min-height: calc(100vh - 150px);
+    grid-area: contain;
+    width: 100%;
+}
+.containbio > img {
+    aspect-ratio: 2/1;
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}

@@ -5,13 +5,15 @@
     justify-content: center;
     gap: 30px;
 }
-.card {
+.card > a{
+    all: unset;
+    cursor: pointer;
     display: grid;
     width: 270px;
     grid-template-columns:  1fr 1fr;
-    grid-template-rows: 120px 120px repeat(3,40px);
+    grid-template-rows: 120px 120px repeat(3,40px) 0;
     border-radius: 5px;
-    background: #00000007;
+    background: #f9ede9;
     grid-template-areas:
             "image image"
             "image image"
