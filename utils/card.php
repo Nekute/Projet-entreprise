@@ -64,7 +64,7 @@ function article($id): string
             </div>";
 }
 
-function singleArticle($id,$quantite): string
+function singleArticle($id, $quantite): string
 {
     $produit = getProduitById($id)[0];
     return "
@@ -85,14 +85,14 @@ function singleArticle($id,$quantite): string
             <button type='submit' name='quantity' value='" . $quantite - 1 . "'><svg data-darkreader-inline-stroke=\"\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\">
   <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M18 12H6\"></path>
 </svg></button></form>
-                    <input type=\"text\" id=\"quantity\" name=\"\" value='$quantite'
+<form method='post'>
+                    <input type=\"text\" id=\"quantity\" name=\"quantity\" value='$quantite'
     oninput=\"this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');\" />
+</form>
     <form method='post'>
             <button type='submit' name='quantity' value='" . $quantite + 1 . "'><svg data-darkreader-inline-stroke=\"\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\">
   <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 6v12m6-6H6\"></path>
-</svg></button></form>
-<input type=\"submit\">
-</form></div>
+</svg></button></form></div>
                     <a href=\"../singleProduit.php?id=$id\">Ajouter au panier</a>
                     <div class=\"description\" onclick='this.parentNode.querySelector(\".descriptionText\").classList.toggle(\"show\")'>
                         <p>Desciption</p>
