@@ -20,19 +20,7 @@
     include_once "utils/header.php";
     ?>
     <div class="containbio">
-        <img src="image/Nekute_human_cat_team_with_pastel_blue_background_b97c4a80-1e57-49ab-9e1f-713177e37f23.png" alt="">
-        <h1></h1>
-        <div id="histoire">
-        </div>
-        <div id="story">
-
-        </div>
-        <div id="team">
-            <div class="membre">
-                <img src="" alt="">
-                <p></p>
-            </div>
-        </div>
+        <h1>"slogan"</h1>
     </div>
     <?php
     include_once 'utils/footer.php';

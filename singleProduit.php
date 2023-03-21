@@ -3,10 +3,19 @@ require_once "utils/card.php";
 require_once "modele/produitDB.php";
 $id = null;
 $erreur = null;
-if (!empty($id) || is_numeric($_GET["id"])) {
+$quantite = 1;
+if (!isset($id) || is_numeric($_GET["id"])) {
     $id = $_GET["id"];
 } else {
     $erreur = "pu sa mèr";
+}
+if ($_SERVER["REQUEST_METHOD"] == 'POST') {
+    print_r($_POST);
+    if (isset($_POST["quantity"])) {
+        if (is_numeric($_POST["quantity"]) && $_POST["quantity"]>0) {
+            $quantite = $_POST["quantity"];
+        }
+    }
 }
 ?>
 <!doctype html>
@@ -30,13 +39,15 @@ if (!empty($id) || is_numeric($_GET["id"])) {
     if (isset($erreur)) {
         echo $erreur;
     } else {
-        echo "<div class=\"containSingleProduit\">" . article($id) . "
+        echo "<div class=\"containSingleProduit\">" . singleArticle($id, $quantite) . "
 </div>";
     } ?>
     <?php
     include_once "utils/footer.php";
     ?>
+
 </div>
+<script src="script.js"></script>
 </body>
 </html>
 

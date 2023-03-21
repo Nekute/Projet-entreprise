@@ -200,13 +200,14 @@ nav {
     gap: 10px;
 }
 
-.compte a > svg {
-    width: 30px;
+.compte a {
+    display: block;
+    margin-left: 10px;
+}
+.user{
+    display: block;
 }
 
-.compte a > svg > path {
-    fill: black;
-}
 
 .groupNav > a {
     display: flex;
@@ -422,12 +423,6 @@ h1 {
     padding: 13px 25px;
 }
 
-.fabrication {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 60px;
-}
 
 .texteUne > a:hover {
     transition: background-color 0.3s ease;
@@ -749,4 +744,11 @@ footer {
         width: unset;
     }
 
+}
+.descriptionText{
+    opacity: 0;
+    margin-top: 10px;
+}
+.show {
+    opacity: 1;
 }

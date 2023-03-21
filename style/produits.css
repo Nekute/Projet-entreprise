@@ -14,35 +14,43 @@
     flex-direction: row;
     gap: 10px;
 }
-.menutop{
+
+.menutop {
     border-bottom: 1px solid #e8e8e1;
 
     padding: 35px 40px 35px 40px;
 }
-.path > h2{
+
+.path > h2 {
     display: block;
 
 }
+
 .path > a {
     font-size: 12px;
 }
-.pathbar{
+
+.pathbar {
     opacity: 0.2;
 }
-.affichageCollection{
+
+.affichageCollection {
     display: flex;
     justify-content: space-between;
     width: 90%;
     margin: 25px auto;
 }
+
 .affichageCollection > p {
     letter-spacing: 1px;
 }
-#filtre{
+
+#filtre {
     border: none;
     outline: none;
 }
-select{
+
+select {
     background-image: url("../image/ico-select.svg");
     background-position: 100%;
     background-repeat: no-repeat;
@@ -53,8 +61,36 @@ select{
     padding: 8px 28px 8px 8px;
     letter-spacing: 1px;
 }
-.collection > .card{
+
+.collection > .card {
 }
-.containSingleProduit{
+
+.containSingleProduit {
     margin: 50px 0;
+}
+
+.fabrication {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.quantite {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.quantite input[type = "text"] {
+    all: unset;
+    display: inline-block;
+    text-align: center;
+    min-width: 50px;
+}
+.quantite > form > button{
+    all: unset;
+    cursor: pointer;
 }
