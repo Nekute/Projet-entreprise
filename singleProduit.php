@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "utils/card.php";
 require_once "modele/produitDB.php";
 $id = null;
@@ -10,7 +11,6 @@ if (!isset($id) || is_numeric($_GET["id"])) {
     $erreur = "pu sa mèr";
 }
 if ($_SERVER["REQUEST_METHOD"] == 'POST') {
-    print_r($_POST);
     if (isset($_POST["quantity"])) {
         if (is_numeric($_POST["quantity"]) && $_POST["quantity"]>0) {
             $quantite = $_POST["quantity"];
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     ?>
 
 </div>
-<script src="script.js"></script>
+<script src="singleProduit.js"></script>
 </body>
 </html>
 

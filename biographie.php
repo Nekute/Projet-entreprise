@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+if (!isset($_SESSION["profile"])){
+    $_SESSION["profile"] = [];
+}
 ?>
 <!doctype html>
 <html lang="en">

@@ -4,8 +4,6 @@ var bushes = Array.from(
 );
 var temps = 0.1;
 var left = 0;
-const quantity = document.getElementById("quantity");
-const result = document.getElementById('result');
 
 function createBush() {
     const bush = document.createElement("div");
@@ -105,7 +103,3 @@ function buttonPreviousCaroussel() {
 }
 clearTimeout(timeCaroussel);
 timeCaroussel = setTimeout(() => buttonNextCaroussel(), 10000);
-const inputHandler = function(e) {
-    result.innerHTML = e.target.value;
-}
-quantity.addEventListener('input', inputHandler);

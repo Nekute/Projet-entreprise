@@ -1,5 +1,9 @@
 <?php
+session_start();
 include_once "utils/card.php";
+if (!isset($_SESSION["profile"])){
+    $_SESSION["profile"] = [];
+}
 ?>
 
 <!doctype html>

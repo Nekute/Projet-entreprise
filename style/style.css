@@ -413,7 +413,7 @@ h1 {
     height: 20px;
 }
 
-.texteUne > a {
+.texteUne > a{
     background: #e1eff5;
     border-radius: 50px;
     width: 100%;
@@ -442,9 +442,11 @@ h1 {
 .description > svg path {
     fill: black;
 }
-
-.description > svg {
+.rotateSvg > svg{
     transform: rotate(90deg);
+}
+.svg-icon {
+    transform: rotate(180deg);
 }
 
 .articleUne {

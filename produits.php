@@ -1,6 +1,10 @@
 <?php
+session_start();
 require_once "utils/card.php";
-require_once "modele/produitDB.php"
+require_once "modele/produitDB.php";
+if (!isset($_SESSION["profile"])){
+    $_SESSION["profile"] = [];
+}
 ?>
 <!doctype html>
 <html lang="en">

@@ -1,9 +1,10 @@
 <?php
+session_start();
 require_once "utils/card.php";
 require_once "modele/produitDB.php";
-$photo[] = "arbre-a-chat-design.jpg";
-$photo[] = "arbre-a-chat-en-bois-du-type-cla.jpg";
-$i = 0;
+if (!isset($_SESSION["profile"])){
+    $_SESSION["profile"] = [];
+}
 ?>
 <!doctype html>
 <html lang="en">
