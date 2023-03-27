@@ -4,7 +4,16 @@ var bushes = Array.from(
 );
 var temps = 0.1;
 var left = 0;
-
+async function checkHeader() {
+    let scrollPosition = window.scrollY;
+    console.log(scrollPosition);
+/*    if (scrollPosition > 100){
+        document.querySelector("header").classList.add("reduced")
+    } else {
+        document.querySelector("header").classList.remove("reduced");
+    }*/
+}
+window.addEventListener('scroll', checkHeader);
 function createBush() {
     const bush = document.createElement("div");
     bush.classList.add("bush");

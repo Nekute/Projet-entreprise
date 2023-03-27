@@ -1,11 +1,97 @@
-.containbio{
+.containbio {
     min-height: calc(100vh - 150px);
     grid-area: contain;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
 }
+
 .containbio > img {
     aspect-ratio: 2/1;
     width: 100%;
     height: 350px;
     object-fit: cover;
+}
+
+.histoire {
+    margin-bottom: 30px;
+}
+
+.histoire > p:nth-of-type(1) {
+    text-indent: 40px;
+}
+.histoire > p {
+    margin: 20px 0;
+}
+.personnels {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    justify-content: center;
+    gap: 30px;
+}
+
+.personnel-icon {
+    position: relative;
+}
+
+.personnel-text {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(136, 197, 233, 0.4);
+    width: 250px;
+    height: 250px;
+    transition: opacity 0.2s ease;
+}
+
+.personnel-text > p {
+    color: white;
+    text-align: center;
+}
+
+.personnel-text > p:first-of-type {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.personnel-text > hr {
+    margin: 5px auto;
+    width: 80%;
+}
+
+.personnel-icon > img {
+    width: 100%;
+    height: 250px;
+    justify-content: center;
+    object-fit: cover;
+}
+
+.personnel-text:hover {
+    opacity: 1;
+}
+
+.separator {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    color: #000000;
+    margin: 20px 0;
+}
+
+.separator .line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    border: 0;
+    background-color: #cbcaca;
+}
+
+.separator h2 {
+    width: max-content;
 }

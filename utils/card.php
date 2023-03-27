@@ -184,3 +184,17 @@ function signIn(): void
   <p class=\"note\">Terms of use &amp; Conditions</p>
 </form></div>";
 }
+
+function personnelCard($id): void
+{
+    $personnel = getPersonnelById($id)[0];
+    echo "<div class='personnel-icon'>
+        <img src='../image/fetchimage.jpg' alt=''>
+        <div class='personnel-text'>
+        <p>".strtoupper($personnel["nom_personnel"])."
+".ucfirst($personnel["prenom_personnel"])."</p>
+        <hr class='line'>
+        <p>".$personnel["poste_personnel"]."</p>
+        </div>
+</div>";
+}
