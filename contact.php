@@ -1,8 +1,8 @@
 <?php
 session_start();
 include_once "utils/card.php";
-if (!isset($_SESSION["profile"])){
-    $_SESSION["profile"] = [];
+if (!isset($_SESSION["profil"])){
+    $_SESSION["profil"] = [];
 }
 ?>
 
@@ -31,9 +31,10 @@ if (!isset($_SESSION["profile"])){
                 <div class="infoText">
                     <p>
                         <strong>Courcouronnes</strong><br>
-                        7 rue du giga chad <br>
+                        7 rue donzelot <br>
                         91080 Essonne <br>
-                        +33 6 66 13 04 69
+                        +33 6 66 13 04 69 <br>
+                        contact@chapristi.com
                     </p>
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21098.730001804335!2d2.3945547759347656!3d48.62245157294996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5de728acdadfd%3A0x40b82c3688b47b0!2sCourcouronnes%2C%2091080%20%C3%89vry-Courcouronnes!5e0!3m2!1sfr!2sfr!4v1678216912041!5m2!1sfr!2sfr"

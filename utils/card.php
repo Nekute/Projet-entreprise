@@ -81,20 +81,7 @@ function singleArticle($id, $quantite): string
                         <p>Fait main, en France</p>
                     </div>
                     <div class='quantite'>
-                    <form method='post'><div class='quantite selectQuantity'>
-            <button type='button' id='minus-button'><svg data-darkreader-inline-stroke=\"\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\">
-  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M18 12H6\"></path>
-</svg>
-</button>
-
-                    <input type=\"text\" id=\"quantity\" name=\"quantity\" value='$quantite'
-    oninput=\"this.value = this.value.replace(/[^1-9]/g, '').replace(/(\..*)\./g, '$1');\" />
-
-
-            <button type='button' id='plus-button'><svg data-darkreader-inline-stroke=\"\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\">
-  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 6v12m6-6H6\"></path>
-</svg>
-</button></div>
+                    <form method='post'>" . buttonSelectQuantity($quantite) . "
 <input type=\"submit\" value='Ajouter au panier'>
 </form></div>
                     <div class=\"description\" onclick='this.parentNode.querySelector(\".descriptionText\").classList.toggle(\"show\");this.parentNode.querySelector(\".description\").classList.toggle(\"rotateSvg\")'>
@@ -109,6 +96,24 @@ function singleArticle($id, $quantite): string
                 </div>
                 <img src=\"image/" . $produit["image_produit"] . "\" alt=\"\" class=\"imageUne\">
             </div>";
+}
+
+function buttonSelectQuantity($quantite)
+{
+    return "<div class='quantite selectQuantity'>
+            <button type='button' id='minus-button'><svg data-darkreader-inline-stroke=\"\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\">
+  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M18 12H6\"></path>
+</svg>
+</button>
+
+                    <input type=\"text\" id=\"quantity\" name=\"quantity\" value='$quantite'
+    oninput=\"this.value = this.value.replace(/[^1-9]/g, '').replace(/(\..*)\./g, '$1');\" />
+
+
+            <button type='button' id='plus-button'><svg data-darkreader-inline-stroke=\"\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\">
+  <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M12 6v12m6-6H6\"></path>
+</svg>
+</button></div>";
 }
 
 function signIn(): void
@@ -191,10 +196,19 @@ function personnelCard($id): void
     echo "<div class='personnel-icon'>
         <img src='../image/fetchimage.jpg' alt=''>
         <div class='personnel-text'>
-        <p>".strtoupper($personnel["nom_personnel"])."
-".ucfirst($personnel["prenom_personnel"])."</p>
+        <p>" . strtoupper($personnel["nom_personnel"]) . "
+" . ucfirst($personnel["prenom_personnel"]) . "</p>
         <hr class='line'>
-        <p>".$personnel["poste_personnel"]."</p>
+        <p>" . $personnel["poste_personnel"] . "</p>
         </div>
 </div>";
+}
+
+function panierProduit($id, $quantite)
+{
+    $produit = getProduitById($id)[0];
+    return "<div class='produit'>
+<div class='imagePanier'><img src=\"image/" . $produit["image_produit"] . "\" alt='image produit'></div>
+<p>" . $produit["nom_produit"] . "</p>
+            </form></div>";
 }

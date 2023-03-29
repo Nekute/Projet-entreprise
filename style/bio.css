@@ -2,7 +2,7 @@
     min-height: calc(100vh - 150px);
     grid-area: contain;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 20px;
 }
 
 .containbio > img {

@@ -1,0 +1,30 @@
+.containPanier {
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+}
+
+.panier {
+    background: #f9ede9;
+    margin: 20px;
+}
+
+.panier svg {
+    width: 20px;
+    height: 20px;
+}
+
+.produit {
+    display: grid;
+    height: 64px;
+    grid-template-columns: 64px 1fr 0.25fr 0;
+    margin: 15px;
+    gap: 10px;
+}
+.imagePanier > img{
+    width: 64px;
+    height: 64px;
+    border-radius: 3px;
+}
+.produit > p {
+    align-self: center;
+}

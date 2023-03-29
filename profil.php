@@ -1,8 +1,8 @@
 <?php
 session_start();
 require_once "utils/card.php";
-if (!isset($_SESSION["profile"])){
-    $_SESSION["profile"] = [];
+if (!isset($_SESSION["profil"])){
+    $_SESSION["profil"] = [];
 }?>
 <!doctype html>
 <html lang="en">
@@ -11,12 +11,12 @@ if (!isset($_SESSION["profile"])){
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style/profile.css">
-    <title>Profile | Chapristi</title>
+    <link rel="stylesheet" href="style/profil.css">
+    <title>profil | Chapristi</title>
 </head>
 <body>
 <?php
-if (empty($_SESSION["profile"])){
+if (empty($_SESSION["profil"])){
     signIn();
 }
 ?>

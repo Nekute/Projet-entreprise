@@ -10,13 +10,20 @@ if (!isset($id) || is_numeric($_GET["id"])) {
 } else {
     $erreur = "pu sa mèr";
 }
+if (!isset($_SESSION["profil"])){
+    $_SESSION["profil"] = [];
+}
 if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     if (isset($_POST["quantity"])) {
         if (is_numeric($_POST["quantity"]) && $_POST["quantity"]>0) {
             $quantite = $_POST["quantity"];
+            if (empty($_SESSION["profil"])){
+                $_SESSION["panier"][$id] = ["quantite" => $quantite];
+            }
         }
     }
 }
+print_r($_SESSION);
 ?>
 <!doctype html>
 <html lang="en">

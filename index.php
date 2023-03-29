@@ -2,8 +2,8 @@
 session_start();
 require_once "utils/card.php";
 require_once "modele/produitDB.php";
-if (!isset($_SESSION["profile"])){
-    $_SESSION["profile"] = [];
+if (!isset($_SESSION["profil"])){
+    $_SESSION["profil"] = [];
 }
 ?>
 <!doctype html>

@@ -1,7 +1,7 @@
 <?php
 session_start();
-if (!isset($_SESSION["profile"])) {
-    $_SESSION["profile"] = [];
+if (!isset($_SESSION["profil"])) {
+    $_SESSION["profil"] = [];
 }
 require_once "modele/personnel.php";
 require_once "utils/card.php";
@@ -56,7 +56,7 @@ require_once "utils/card.php";
         </div>
         <div class="separator">
             <hr class="line">
-            <span><h2>Notre Team</h2></span>
+            <span><h2>Notre team</h2></span>
             <hr class="line">
         </div>
         <div class="personnels">

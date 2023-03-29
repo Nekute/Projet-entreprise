@@ -94,13 +94,13 @@ select {
     order: 2;
 }
 
-.quantite input[type = "text"] {
+.quantite input[type = "text"], .panier input[type = "text"] {
     all: unset;
     display: inline-block;
     text-align: center;
     min-width: 50px;
 }
-.quantite > form  button{
+.quantite > form  button, .panier > form button{
     all: unset;
     cursor: pointer;
 }
