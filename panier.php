@@ -2,9 +2,7 @@
 session_start();
 require_once "modele/produitDB.php";
 require_once "utils/card.php";
-if (!isset($_SESSION["profil"])){
-    $_SESSION["profil"] = [];
-}
+require_once "utils/session.php";
 ?>
 <!doctype html>
 <html lang="en">

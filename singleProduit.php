@@ -1,7 +1,10 @@
 <?php
 session_start();
 require_once "utils/card.php";
+require_once "utils/session.php";
 require_once "modele/produitDB.php";
+require_once "modele/panierDB.php";
+
 $id = null;
 $erreur = null;
 $quantite = 1;
@@ -10,15 +13,14 @@ if (!isset($id) || is_numeric($_GET["id"])) {
 } else {
     $erreur = "pu sa mèr";
 }
-if (!isset($_SESSION["profil"])){
-    $_SESSION["profil"] = [];
-}
 if ($_SERVER["REQUEST_METHOD"] == 'POST') {
     if (isset($_POST["quantity"])) {
         if (is_numeric($_POST["quantity"]) && $_POST["quantity"]>0) {
             $quantite = $_POST["quantity"];
             if (empty($_SESSION["profil"])){
                 $_SESSION["panier"][$id] = ["quantite" => $quantite];
+            } else {
+                ajouterPanierProduit($_SESSION["profil"],$id,$quantite);
             }
         }
     }

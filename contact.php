@@ -1,9 +1,7 @@
 <?php
 session_start();
 include_once "utils/card.php";
-if (!isset($_SESSION["profil"])){
-    $_SESSION["profil"] = [];
-}
+require_once "utils/session.php";
 ?>
 
 <!doctype html>

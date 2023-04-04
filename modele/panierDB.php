@@ -47,16 +47,31 @@ function getPanierProduitByIdProduit($id): array|string
     }
 }
 
+function checkPanierByIdUserIdProduit($idUser,$idProduit){
+    $connexion = getConnexion();
+    $checks = "select * from chapristi.panier where id_utilisateur = :id_user and id_produit = :id_produit";
+    $check = $connexion->prepare($checks);
+    $check->bindValue(":id_user", $idUser);
+    $check->bindValue(":id_produit", $idProduit);
+    $check->execute();
+    return $check->fetchAll(2);
+}
 
-function ajouterPanierProduit($idUser, $idProduit): bool
+function ajouterPanierProduit($idUser, $idProduit, $quantite = 1): bool
 {
     $connexion = getConnexion();
-    $requeteSQL = "Insert into chapristi.panier(id_utilisateur, id_produit,quantité_panier)
-values(:id_user,:id_produit,1)";
-    $requete = $connexion->prepare($requeteSQL);
-    $requete->bindValue(":id_user", $idUser);
-    $requete->bindValue(":id_produit", $idProduit);
-    return $requete->execute();
+    if (empty(checkPanierByIdUserIdProduit($idUser,$idProduit))) {
+        $requeteSQL = "Insert into chapristi.panier(id_utilisateur, id_produit,quantité_panier)
+values(:id_user,:id_produit,:quantite)";
+        $requete = $connexion->prepare($requeteSQL);
+        $requete->bindValue(":id_user", $idUser);
+        $requete->bindValue(":id_produit", $idProduit);
+        $requete->bindValue(":quantite", $quantite);
+        return $requete->execute();
+    } else {
+        return modifierQuantitePanier($idUser,$idProduit,$quantite);
+    }
+
 }
 
 function getAllPanierProduitsByIdUser($idUser)
@@ -77,7 +92,7 @@ function modifierQuantitePanier($idUser, $idProduit, $quantite)
     }
     $requete->bindValue(":idUser", $idUser);
     $requete->bindValue(":idProduit", $idProduit);
-    $requete->execute();
+    return $requete->execute();
 }
 
 function DeleteAllPanierByIdUser($idUser)

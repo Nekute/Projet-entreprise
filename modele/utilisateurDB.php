@@ -13,6 +13,13 @@ VALUES (NULL, :pseudo,:email,:mdp,:role);";
     return $requete->execute();
 }
 
+function getIdUserByUsername($username){
+    $requete = getConnexion()->prepare("select id_utilisateur from chapristi.utilisateur where pseudo_utilisateur = :username");
+    $requete->bindValue(":username", $username);
+    $requete->execute();
+    return $requete->fetchAll(2);
+}
+
 function checkUserByUsername($username)
 {
     $requete = getConnexion()->prepare("select * from chapristi.utilisateur where pseudo_utilisateur = :username");
@@ -26,11 +33,12 @@ function checkUserByUsername($username)
 
 function checkConnexionUser($username, $mdp)
 {
-    $requete = getConnexion()->prepare("select * from chapristi.utilisateur where pseudo_utilisateur = :username and mdp_utilisateur = :mdp");
+    $requete = getConnexion()->prepare("select * from chapristi.utilisateur where pseudo_utilisateur = :username");
     $requete->bindValue(":username", $username);
-    $requete->bindValue(":mdp", password_hash($mdp, PASSWORD_DEFAULT));
-    if (empty($requete->fetchAll(2))) {
-        return false;
+    $requete->execute();
+    $profil = $requete->fetchAll(2);
+    if (password_verify($mdp,$profil[0]["mdp_utilisateur"])) {
+        return true;
     }
-    return true;
+    return false;
 }

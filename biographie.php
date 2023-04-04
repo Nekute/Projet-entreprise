@@ -1,10 +1,8 @@
 <?php
 session_start();
-if (!isset($_SESSION["profil"])) {
-    $_SESSION["profil"] = [];
-}
 require_once "modele/personnel.php";
 require_once "utils/card.php";
+require_once "utils/session.php";
 ?>
 <!doctype html>
 <html lang="en">

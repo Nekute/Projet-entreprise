@@ -1,9 +1,34 @@
 <?php
 session_start();
 require_once "utils/card.php";
-if (!isset($_SESSION["profil"])){
+require_once "modele/utilisateurDB.php";
+require_once "modele/panierDB.php";
+require_once "utils/session.php";
+
+$pseudo = null;
+if ($_SERVER["REQUEST_METHOD"] == 'POST') {
+    if (isset($_POST["pseudo"])) {
+        $pseudo = $_POST["pseudo"];
+        if (checkConnexionUser($pseudo, $_POST["mdp"])){
+            $_SESSION["profil"] = getIdUserByUsername($pseudo)[0]["id_utilisateur"];
+        }
+    }
+}
+if (!isset($_SESSION["profil"])) {
     $_SESSION["profil"] = [];
-}?>
+}
+if(!empty($_SESSION["profil"])){
+    if (empty(getAllPanierProduitsByIdUser($_SESSION["profil"]))){
+        foreach ($_SESSION["panier"] as $key => $value){
+            ajouterPanierProduit($_SESSION["profil"],$key,$value["quantite"]);
+        }
+    } else {
+        foreach (getAllPanierProduitsByIdUser($_SESSION["profil"]) as $key => $value){
+            echo $value."<br>";
+        }
+    }
+    print_r($_SESSION);
+} ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,13 +36,13 @@ if (!isset($_SESSION["profil"])){
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style/profil.css">
+    <link rel="stylesheet" href="style/profile.css">
     <title>profil | Chapristi</title>
 </head>
 <body>
 <?php
-if (empty($_SESSION["profil"])){
-    signIn();
+if (empty($_SESSION["profil"])) {
+    signIn($pseudo);
 }
 ?>
 </body>
