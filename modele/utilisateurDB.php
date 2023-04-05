@@ -42,3 +42,11 @@ function checkConnexionUser($username, $mdp)
     }
     return false;
 }
+
+function getUserById($id){
+    $requete = getConnexion()->prepare( "select * from chapristi.utilisateur where id_utilisateur = :id");
+    $requete->bindValue(":id", $id);
+    $requete->execute();
+    return $requete->fetchAll(2);
+
+}

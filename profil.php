@@ -23,11 +23,12 @@ if(!empty($_SESSION["profil"])){
             ajouterPanierProduit($_SESSION["profil"],$key,$value["quantite"]);
         }
     } else {
+        $_SESSION["panier"] = [];
         foreach (getAllPanierProduitsByIdUser($_SESSION["profil"]) as $key => $value){
-            echo $value."<br>";
+            $_SESSION["panier"][$value["id_produit"]] = ["quantite" => $value["quantité_panier"]];
         }
     }
-    print_r($_SESSION);
+
 } ?>
 <!doctype html>
 <html lang="en">
@@ -43,7 +44,10 @@ if(!empty($_SESSION["profil"])){
 <?php
 if (empty($_SESSION["profil"])) {
     signIn($pseudo);
+} else {
+    echo profil($_SESSION["profil"]);
 }
 ?>
+<script src="profil.js"></script>
 </body>
 </html>

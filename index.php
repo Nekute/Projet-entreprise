@@ -105,6 +105,7 @@ require_once "utils/session.php";
     include_once "utils/footer.php";
     ?>
 </div>
-<script src="script.js"></script>
+<script src="script.js">
+</script>
 </body>
 </html>

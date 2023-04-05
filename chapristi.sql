@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 27 mars 2023 à 21:12
--- Version du serveur : 10.4.27-MariaDB
--- Version de PHP : 8.2.0
+-- Généré le : mar. 04 avr. 2023 à 11:48
+-- Version du serveur : 10.4.24-MariaDB
+-- Version de PHP : 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `catégorie` (
   `id_catégorie` int(11) NOT NULL,
   `libellé_catégorie` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `catégorie`
@@ -52,7 +52,16 @@ CREATE TABLE `panier` (
   `id_utilisateur` int(11) NOT NULL,
   `quantité_panier` int(11) NOT NULL,
   `confirmation_panier` int(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `panier`
+--
+
+INSERT INTO `panier` (`id_panier`, `id_produit`, `id_utilisateur`, `quantité_panier`, `confirmation_panier`) VALUES
+(7, 3, 1, 7, 0),
+(8, 1, 1, 1, 0),
+(9, 2, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -65,19 +74,20 @@ CREATE TABLE `personnels` (
   `nom_personnel` varchar(60) NOT NULL,
   `prenom_personnel` varchar(60) NOT NULL,
   `email_personnel` varchar(100) NOT NULL,
-  `poste_personnel` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `poste_personnel` varchar(100) NOT NULL,
+  `photo_personnel` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `personnels`
 --
 
-INSERT INTO `personnels` (`id_personnel`, `nom_personnel`, `prenom_personnel`, `email_personnel`, `poste_personnel`) VALUES
-(1, 'ihaddadene', 'wassil', 'wassil.ihaddadene@gmail.com', 'Président-directeur général'),
-(2, 'ciapa', 'lea', 'lea.ciapa@gmail.com', 'Directrice Ressources Humaines'),
-(3, 'moulinet', 'baptiste', 'baptiste.moulinet@gmail.com', 'Directeur Marketing et ventes'),
-(4, 'Salama', 'Mickael', 'Mickael.Salama@gmail.com', 'Directeur des systèmes d\'information'),
-(5, 'Couvreux', 'thalia', 'Thalia.Couvreux@gmail.com', 'Directrice administrative et financière');
+INSERT INTO `personnels` (`id_personnel`, `nom_personnel`, `prenom_personnel`, `email_personnel`, `poste_personnel`, `photo_personnel`) VALUES
+(1, 'ihaddadene', 'wassil', 'wassil.ihaddadene@gmail.com', 'Président-directeur général', 'coughing-cat-dcbc3e50b235f7aa379.png'),
+(2, 'ciapa', 'lea', 'lea.ciapa@gmail.com', 'Directrice Ressources Humaines', '4p3h78.jpg'),
+(3, 'moulinet', 'baptiste', 'baptiste.moulinet@gmail.com', 'Directeur Marketing et ventes', 'e6e.jpg'),
+(4, 'Salama', 'Mickael', 'Mickael.Salama@gmail.com', 'Directeur des systèmes d\'information', 'longcatsocial.png'),
+(5, 'Couvreux', 'thalia', 'Thalia.Couvreux@gmail.com', 'Directrice administrative et financière', '3jb5w2.png');
 
 -- --------------------------------------------------------
 
@@ -93,7 +103,7 @@ CREATE TABLE `produits` (
   `stock_produit` int(11) NOT NULL,
   `id_catégorie` int(3) DEFAULT NULL,
   `image_produit` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `produits`
@@ -118,7 +128,14 @@ CREATE TABLE `utilisateur` (
   `email_utilisateur` varchar(80) NOT NULL,
   `mdp_utilisateur` varchar(60) NOT NULL,
   `role` int(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`id_utilisateur`, `pseudo_utilisateur`, `email_utilisateur`, `mdp_utilisateur`, `role`) VALUES
+(1, 'test', 'test@gmail.com', '$2y$10$821hxyjNNs03F9dxVzhwbecCUDaR0SEBxDdhz8iq1DtDpTbUKRLfG', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -171,7 +188,7 @@ ALTER TABLE `catégorie`
 -- AUTO_INCREMENT pour la table `panier`
 --
 ALTER TABLE `panier`
-  MODIFY `id_panier` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_panier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `personnels`
@@ -189,7 +206,7 @@ ALTER TABLE `produits`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Contraintes pour les tables déchargées

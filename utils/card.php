@@ -133,7 +133,9 @@ function signIn($pseudo): void
         />
 </svg></a>
 <div class='contain'><form method='post' class=\"form_container\">
-  <div class=\"logo_container\"></div>
+  <div class=\"logo_container\">
+<img src='../image/fetchimage.jpg' alt=''>  
+</div>
   <div class=\"title_container\">
     <p class=\"title\">Login to your Account</p>
     <span class=\"subtitle\">Get started with our app, just create an account and enjoy the experience.</span>
@@ -190,16 +192,44 @@ function signIn($pseudo): void
 </form></div>";
 }
 
+function profil($id)
+{
+    $profil = getUserById($id)[0];
+    return "<div class='contain'><div class='profil'>
+<div class='navigation'>
+<h2>Gestion du compte</h2>
+<a href='#modifier_profil'>Profil</a></div> 
+<div class='form_container' id='modifier_profil'>
+<div class='description'><h2>Profil</h2>
+<p>sqd</p></div>
+<div class='modifications'><form method='post'>
+<div class=\"input_container\">
+    <label class=\"input_label\" for=\"email_field\">Pseudo</label>
+    <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-tabler-user\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" stroke-width=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\">
+   <path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"></path>
+   <path d=\"M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0\"></path>
+   <path d=\"M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2\"></path>
+</svg>
+    <input placeholder=\"Pseudo\" name=\"pseudo\" type=\"text\" class=\"input_field\" id=\"email_field\" value=\"".$profil["pseudo_utilisateur"]."\">
+  </div>
+  <button title=\"Sign In\" type=\"submit\" class=\"sign-in_btn\">
+    <span>Sauvegarder les modifications</span>
+  </button>
+</form></div>
+</div></div></div>
+";
+}
+
 function personnelCard($id): void
 {
     $personnel = getPersonnelById($id)[0];
     echo "<div class='personnel-icon'>";
-    if(empty($personnel["photo_personnel"])){
+    if (empty($personnel["photo_personnel"])) {
         echo "<img src='../image/fetchimage.jpg' alt=''>";
     } else {
-        echo "<img src=\"../image/".$personnel["photo_personnel"]."\" alt=''>";
+        echo "<img src=\"../image/" . $personnel["photo_personnel"] . "\" alt=''>";
     }
-    echo"
+    echo "
         <div class='personnel-text'>
         <p>" . strtoupper($personnel["nom_personnel"]) . "
 " . ucfirst($personnel["prenom_personnel"]) . "</p>
