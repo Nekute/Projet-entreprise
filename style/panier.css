@@ -19,12 +19,35 @@
     grid-template-columns: 64px 1fr 0.25fr 0;
     margin: 15px;
     gap: 10px;
+    border-radius: 8px;
 }
 .imagePanier > img{
     width: 64px;
     height: 64px;
-    border-radius: 3px;
+    border-radius: 8px;
 }
 .produit > p {
     align-self: center;
+}
+.descriptif{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.descriptif > form{
+    display: flex;
+}
+#quantite-panier{
+    all: unset;
+    height: min-content;
+    margin-left: 20px;
+}
+.panier .line{
+    width: 90%;
+    border-top: 1px solid rgba(57, 57, 57, 0.2);
+}
+.panier .separator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -60,9 +60,6 @@ if (!empty($_SESSION["profil"])) {
         }
     } else {
         $_SESSION["panier"] = [];
-        foreach (getAllPanierProduitsByIdUser($_SESSION["profil"]) as $key => $value) {
-            $_SESSION["panier"][$value["id_produit"]] = ["quantite" => $value["quantité_panier"]];
-        }
     }
 
 }

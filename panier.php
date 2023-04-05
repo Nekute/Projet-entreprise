@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "modele/produitDB.php";
+require_once "modele/panierDB.php";
 require_once "utils/card.php";
 require_once "utils/session.php";
 ?>
@@ -31,6 +32,10 @@ require_once "utils/session.php";
             if (empty($_SESSION["profil"])){
                 foreach ($_SESSION["panier"] as $key => $value){
                     echo panierProduit($key,$value["quantite"]);
+                }
+            } else {
+                foreach (getAllPanierProduitsByIdUser($_SESSION["profil"]) as $key => $value) {
+                    echo panierProduit($value["id_produit"],$value["quantité_panier"]);
                 }
             }
             ?>

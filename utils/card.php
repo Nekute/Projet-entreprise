@@ -216,6 +216,19 @@ function panierProduit($id, $quantite)
     $produit = getProduitById($id)[0];
     return "<div class='produit'>
 <div class='imagePanier'><img src=\"image/" . $produit["image_produit"] . "\" alt='image produit'></div>
+<div class='descriptif'>
 <p>" . $produit["nom_produit"] . "</p>
-            </form></div>";
+<form method='post'>
+<label for='quantite-panier'>Quantité : </label>
+<input type=\"text\" id=\"quantite-panier\" name=\"quantite-panier\" value='$quantite'
+    oninput=\"this.value = this.value.replace(/[^1-9]/g, '').replace(/(\..*)\./g, '$1');\" />
+
+</form>
+</div>
+            </form>
+            <p>".$produit["prix_produit"]." €</p>
+            </div>
+            <div class=\"separator\">
+    <hr class=\"line\">
+  </div>";
 }
