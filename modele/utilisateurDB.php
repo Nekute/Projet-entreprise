@@ -13,7 +13,8 @@ VALUES (NULL, :pseudo,:email,:mdp,:role);";
     return $requete->execute();
 }
 
-function getIdUserByUsername($username){
+function getIdUserByUsername($username)
+{
     $requete = getConnexion()->prepare("select id_utilisateur from chapristi.utilisateur where pseudo_utilisateur = :username");
     $requete->bindValue(":username", $username);
     $requete->execute();
@@ -37,16 +38,41 @@ function checkConnexionUser($username, $mdp)
     $requete->bindValue(":username", $username);
     $requete->execute();
     $profil = $requete->fetchAll(2);
-    if (password_verify($mdp,$profil[0]["mdp_utilisateur"])) {
+    if (password_verify($mdp, $profil[0]["mdp_utilisateur"])) {
         return true;
     }
     return false;
 }
 
-function getUserById($id){
-    $requete = getConnexion()->prepare( "select * from chapristi.utilisateur where id_utilisateur = :id");
+function getUserById($id)
+{
+    $requete = getConnexion()->prepare("select * from chapristi.utilisateur where id_utilisateur = :id");
     $requete->bindValue(":id", $id);
     $requete->execute();
     return $requete->fetchAll(2);
 
+}
+
+function modifierPseudo($id, $pseudo): bool
+{
+    $requete = getConnexion()->prepare("update chapristi.utilisateur set pseudo_utilisateur = :pseudo where id_utilisateur = :id");
+    $requete->bindValue(":id", $id);
+    $requete->bindValue(":pseudo", $pseudo);
+    return $requete->execute();
+}
+
+function modifierEmail($id, $email): bool
+{
+    $requete = getConnexion()->prepare("update chapristi.utilisateur set email_utilisateur = :email where id_utilisateur = :id");
+    $requete->bindValue(":id", $id);
+    $requete->bindValue(":email", $email);
+    return $requete->execute();
+}
+
+function modifierMdp($id, $mdp): bool
+{
+    $requete = getConnexion()->prepare("update chapristi.utilisateur set mdp_utilisateur = :mdp where id_utilisateur = :id");
+    $requete->bindValue(":id", $id);
+    $requete->bindValue(":mdp", password_hash($mdp,PASSWORD_DEFAULT));
+    return $requete->execute();
 }

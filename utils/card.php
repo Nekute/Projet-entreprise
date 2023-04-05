@@ -159,10 +159,10 @@ function signIn($pseudo): void
     </svg>
     <input placeholder=\"Mot de passe\" name=\"mdp\" type=\"password\" class=\"input_field\" id=\"password_field\">
   </div>
-  <button title=\"Sign In\" type=\"submit\" class=\"sign-in_btn\">
+  <button title=\"Se connecter\" type=\"submit\" class=\"sign-in_btn\">
     <span>Se connecter</span>
   </button>
-<button title=\"Sign In\" type=\"submit\" class=\"sign-in_ggl\">
+<button title=\"Se connecter\" type=\"submit\" class=\"sign-in_ggl\">
     <svg height=\"18\" width=\"18\" viewBox=\"0 0 32 32\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns=\"http://www.w3.org/2000/svg\">
       <defs>
         <path d=\"M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z\" id=\"A\"></path>
@@ -190,34 +190,6 @@ function signIn($pseudo): void
   </button>
   <p class=\"note\">Terms of use &amp; Conditions</p>
 </form></div>";
-}
-
-function profil($id)
-{
-    $profil = getUserById($id)[0];
-    return "<div class='contain'><div class='profil'>
-<div class='navigation'>
-<h2>Gestion du compte</h2>
-<a href='#modifier_profil'>Profil</a></div> 
-<div class='form_container' id='modifier_profil'>
-<div class='description'><h2>Profil</h2>
-<p>sqd</p></div>
-<div class='modifications'><form method='post'>
-<div class=\"input_container\">
-    <label class=\"input_label\" for=\"email_field\">Pseudo</label>
-    <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"icon icon-tabler icon-tabler-user\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" stroke-width=\"2\" stroke=\"currentColor\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\">
-   <path stroke=\"none\" d=\"M0 0h24v24H0z\" fill=\"none\"></path>
-   <path d=\"M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0\"></path>
-   <path d=\"M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2\"></path>
-</svg>
-    <input placeholder=\"Pseudo\" name=\"pseudo\" type=\"text\" class=\"input_field\" id=\"email_field\" value=\"".$profil["pseudo_utilisateur"]."\">
-  </div>
-  <button title=\"Sign In\" type=\"submit\" class=\"sign-in_btn\">
-    <span>Sauvegarder les modifications</span>
-  </button>
-</form></div>
-</div></div></div>
-";
 }
 
 function personnelCard($id): void

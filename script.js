@@ -1,4 +1,3 @@
-console.log(aaa)
 var width;
 var bushes = Array.from(
     document.getElementsByClassName('bush')
