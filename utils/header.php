@@ -28,7 +28,7 @@
                 <li><a href="../contact.php">Contact</a></li>
             </ul>
         </div>
-        <h1>Chapristi</h1>
+        <a href="../index.php"><h1>Chapristi</h1></a>
         <div class="compte">
             <div class="groups">
                 <svg class="iconS" aria-hidden="true" viewBox="0 0 24 24">

@@ -65,7 +65,9 @@ select {
 }
 
 .containSingleProduit {
-    margin: 50px 0;
+    margin: 20px 0;
+    grid-area: contain;
+    width: 100%;
 }
 
 .fabrication {
@@ -79,18 +81,22 @@ select {
     gap: 10px;
     width: 100%;
 }
-.selectQuantity{
+
+.selectQuantity {
     position: relative;
     display: flex;
     flex-direction: row-reverse;
 }
-#minus-button{
+
+#minus-button {
     order: 3;
 }
-#plus-button{
+
+#plus-button {
     order: 1;
 }
-#quantity{
+
+#quantity {
     order: 2;
 }
 
@@ -100,11 +106,13 @@ select {
     text-align: center;
     min-width: 50px;
 }
-.quantite > form  button, .panier > form button{
+
+.quantite > form button, .panier > form button {
     all: unset;
     cursor: pointer;
 }
-.quantite input[type = "submit"]{
+
+.quantite input[type = "submit"] {
     border: none;
     cursor: pointer;
     background: #e1eff5;

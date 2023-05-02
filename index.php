@@ -90,7 +90,7 @@ require_once "utils/session.php";
             </div>
             <div class="cardCollection">
                 <?php
-                foreach (getAllProduits() as $value) {
+                foreach (getFiveFirstProduits() as $value) {
                     echo card($value["id_produit"]);
                 }
                 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 04 avr. 2023 à 11:48
+-- Généré le : mer. 05 avr. 2023 à 17:49
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -59,9 +59,10 @@ CREATE TABLE `panier` (
 --
 
 INSERT INTO `panier` (`id_panier`, `id_produit`, `id_utilisateur`, `quantité_panier`, `confirmation_panier`) VALUES
-(7, 3, 1, 7, 0),
+(7, 3, 1, 15, 0),
 (8, 1, 1, 1, 0),
-(9, 2, 1, 1, 0);
+(9, 2, 1, 1, 0),
+(10, 4, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -124,7 +125,7 @@ INSERT INTO `produits` (`id_produit`, `nom_produit`, `prix_produit`, `note_produ
 
 CREATE TABLE `utilisateur` (
   `id_utilisateur` int(11) NOT NULL,
-  `pseudo_utilisateur` varchar(30) NOT NULL,
+  `pseudo_utilisateur` varchar(32) NOT NULL,
   `email_utilisateur` varchar(80) NOT NULL,
   `mdp_utilisateur` varchar(60) NOT NULL,
   `role` int(1) DEFAULT NULL
@@ -135,7 +136,7 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id_utilisateur`, `pseudo_utilisateur`, `email_utilisateur`, `mdp_utilisateur`, `role`) VALUES
-(1, 'test', 'test@gmail.com', '$2y$10$821hxyjNNs03F9dxVzhwbecCUDaR0SEBxDdhz8iq1DtDpTbUKRLfG', NULL);
+(1, 'test', 'test@gmail.com', '$2y$10$S41HP.fzkhTNFF1MvqdeyOqwE0OIYif0EH65U2mRFNJFSvLkf6cEi', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -188,7 +189,7 @@ ALTER TABLE `catégorie`
 -- AUTO_INCREMENT pour la table `panier`
 --
 ALTER TABLE `panier`
-  MODIFY `id_panier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_panier` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `personnels`

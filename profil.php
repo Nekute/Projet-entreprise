@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         $pseudo = $_POST["pseudo"];
         if (checkConnexionUser(strtolower($pseudo), $_POST["mdp"])) {
             $_SESSION["profil"] = getIdUserByUsername($pseudo)[0]["id_utilisateur"];
+            header("Location: index.php");
         }
     } else if (isset($_POST["changerPseudo"])) {
         if (strlen($_POST["changerPseudo"]) > 32) {
@@ -36,6 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
         } else {
             $erreur["mdp"] = "Mot de passe incorrect";
         }
+    } else if (isset($_POST["deconnexion"])){
+        $_SESSION["profil"] = [];
+        header("Location: index.php");
     }
 }
 if (!isset($_SESSION["profil"])) {
@@ -208,6 +212,9 @@ if (empty($_SESSION["profil"])) {
                         </form>
                     </div>
                 </div>
+                <form method="post">
+                    <input type="submit" id="deconnexion" name="deconnexion" value="Deconnexion">
+                </form>
             </div>
         </div>
     </div>

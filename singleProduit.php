@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST') {
             } else {
                 ajouterPanierProduit($_SESSION["profil"],$id,$quantite);
             }
+            header("Location: produits.php");
         }
     }
 }

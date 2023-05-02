@@ -47,7 +47,8 @@ function getPanierProduitByIdProduit($id): array|string
     }
 }
 
-function checkPanierByIdUserIdProduit($idUser,$idProduit){
+function checkPanierByIdUserIdProduit($idUser, $idProduit)
+{
     $connexion = getConnexion();
     $checks = "select * from chapristi.panier where id_utilisateur = :id_user and id_produit = :id_produit";
     $check = $connexion->prepare($checks);
@@ -60,7 +61,7 @@ function checkPanierByIdUserIdProduit($idUser,$idProduit){
 function ajouterPanierProduit($idUser, $idProduit, $quantite = 1): bool
 {
     $connexion = getConnexion();
-    if (empty(checkPanierByIdUserIdProduit($idUser,$idProduit))) {
+    if (empty(checkPanierByIdUserIdProduit($idUser, $idProduit))) {
         $requeteSQL = "Insert into chapristi.panier(id_utilisateur, id_produit,quantité_panier)
 values(:id_user,:id_produit,:quantite)";
         $requete = $connexion->prepare($requeteSQL);
@@ -69,7 +70,7 @@ values(:id_user,:id_produit,:quantite)";
         $requete->bindValue(":quantite", $quantite);
         return $requete->execute();
     } else {
-        return modifierQuantitePanier($idUser,$idProduit,$quantite);
+        return modifierQuantitePanier($idUser, $idProduit, $quantite);
     }
 
 }
@@ -100,4 +101,12 @@ function DeleteAllPanierByIdUser($idUser)
     $requete = getConnexion()->prepare("Delete from chapristi.panier where id_utilisateur = :idUser");
     $requete->bindValue(":idUser", $idUser);
     $requete->execute();
+}
+function getTotalPanier($id){
+    $requete = getConnexion()->prepare("SELECT sum(quantité_panier * produits.prix_produit)
+FROM panier INNER join produits on panier.id_produit = produits.id_produit
+WHERE id_utilisateur = :id;");
+    $requete->bindValue(":id", $id);
+    $requete->execute();
+    return $requete->fetchAll(2);
 }
